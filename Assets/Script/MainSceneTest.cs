@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartScene : MonoBehaviour
+public class MainSceneTest : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,9 +14,9 @@ public class StartScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) || Input.GetKeyDown("enter"))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown("enter"))
         {
-            SceneManager.LoadScene("StandbyScene");
+            SceneManager.LoadScene("ResultScene");
         }
     }
 }
