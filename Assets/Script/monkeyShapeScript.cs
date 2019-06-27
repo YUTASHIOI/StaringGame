@@ -10,6 +10,7 @@ public class monkeyShapeScript : MonoBehaviour
     public float ratio_SMR_MTH = 85.0f;       //
     public float ratio_ANG_MTH = 0.0f;        //
     public float ratio_BIK_EYE = 0.0f;        //
+    public float ratio_5 = 0.0f;        //
 
     [SerializeField]
     GameObject pMonkey;
@@ -33,6 +34,7 @@ public class monkeyShapeScript : MonoBehaviour
         ref_MONKEY_DEF.SetBlendShapeWeight(1, ratio_SMR_MTH);
         ref_MONKEY_DEF.SetBlendShapeWeight(2, ratio_ANG_MTH);
         ref_MONKEY_DEF.SetBlendShapeWeight(3, ratio_BIK_EYE);
+        ref_MONKEY_DEF.SetBlendShapeWeight(4, ratio_5);
     }
 
     void KeyInput()
@@ -71,6 +73,15 @@ public class monkeyShapeScript : MonoBehaviour
         else
         {
             ratio_BIK_EYE = RatioDown(ratio_BIK_EYE);
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            ratio_5 = RatioUp(ratio_5);
+        }
+        else
+        {
+            ratio_5 = RatioDown(ratio_5);
         }
     }
 
