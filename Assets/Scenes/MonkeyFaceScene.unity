@@ -149,14 +149,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e391cc4a8e4787b4791947523343a1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ref_MONKEY_DEF: {fileID: 1067249434941624359, guid: 712868b2a34add5489f4a0c5e6563891,
+  ref_MONKEY_DEF: {fileID: 3611580680511701310, guid: 9ce986e09d7966e48b63f959a24cf125,
     type: 3}
-  ratio_SMR_EYE: 85
-  ratio_SMR_MTH: 85
-  ratio_ANG_MTH: 0
-  ratio_BIK_EYE: 0
+  ratio_1: 85
+  ratio_2: 85
+  ratio_3: 0
+  ratio_4: 0
   ratio_5: 0
-  pMonkey: {fileID: 439362567815174555, guid: 712868b2a34add5489f4a0c5e6563891, type: 3}
+  pMonkey: {fileID: 3459132241903581876, guid: 9ce986e09d7966e48b63f959a24cf125, type: 3}
 --- !u!4 &99650306
 Transform:
   m_ObjectHideFlags: 0

@@ -6,10 +6,10 @@ public class monkeyShapeScript : MonoBehaviour
 {
 
     public SkinnedMeshRenderer ref_MONKEY_DEF;
-    public float ratio_SMR_EYE = 85.0f;       //
-    public float ratio_SMR_MTH = 85.0f;       //
-    public float ratio_ANG_MTH = 0.0f;        //
-    public float ratio_BIK_EYE = 0.0f;        //
+    public float ratio_1 = 85.0f;       //
+    public float ratio_2 = 85.0f;       //
+    public float ratio_3 = 0.0f;        //
+    public float ratio_4 = 0.0f;        //
     public float ratio_5 = 0.0f;        //
 
     [SerializeField]
@@ -30,49 +30,49 @@ public class monkeyShapeScript : MonoBehaviour
 
     void ShapeChange()
     {
-        ref_MONKEY_DEF.SetBlendShapeWeight(0, ratio_SMR_EYE);
-        ref_MONKEY_DEF.SetBlendShapeWeight(1, ratio_SMR_MTH);
-        ref_MONKEY_DEF.SetBlendShapeWeight(2, ratio_ANG_MTH);
-        ref_MONKEY_DEF.SetBlendShapeWeight(3, ratio_BIK_EYE);
-        ref_MONKEY_DEF.SetBlendShapeWeight(4, ratio_5);
+        ref_MONKEY_DEF.SetBlendShapeWeight(0, ratio_1);
+        //ref_MONKEY_DEF.SetBlendShapeWeight(1, ratio_2);
+        //ref_MONKEY_DEF.SetBlendShapeWeight(2, ratio_3);
+        //ref_MONKEY_DEF.SetBlendShapeWeight(3, ratio_4);
+        //ref_MONKEY_DEF.SetBlendShapeWeight(4, ratio_5);
     }
 
     void KeyInput()
     {
         if (Input.GetKey(KeyCode.Q))
         {
-            ratio_SMR_EYE = RatioUp(ratio_SMR_EYE);
+            ratio_1 = RatioUp(ratio_1);
         }
         else
         {
-            ratio_SMR_EYE = RatioDown(ratio_SMR_EYE);
+            ratio_1 = RatioDown(ratio_1);
         }
 
         if (Input.GetKey(KeyCode.W))
         {
-            ratio_SMR_MTH = RatioUp(ratio_SMR_MTH);
+            ratio_2 = RatioUp(ratio_2);
         }
         else
         {
-            ratio_SMR_MTH = RatioDown(ratio_SMR_MTH);
+            ratio_2 = RatioDown(ratio_2);
         }
 
         if (Input.GetKey(KeyCode.O))
         {
-            ratio_ANG_MTH = RatioUp(ratio_ANG_MTH);
+            ratio_3 = RatioUp(ratio_3);
         }
         else
         {
-            ratio_ANG_MTH = RatioDown(ratio_ANG_MTH);
+            ratio_3 = RatioDown(ratio_3);
         }
 
         if (Input.GetKey(KeyCode.P))
         {
-            ratio_BIK_EYE = RatioUp(ratio_BIK_EYE);
+            ratio_4 = RatioUp(ratio_4);
         }
         else
         {
-            ratio_BIK_EYE = RatioDown(ratio_BIK_EYE);
+            ratio_4 = RatioDown(ratio_4);
         }
 
         if (Input.GetKey(KeyCode.A))
