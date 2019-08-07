@@ -5,12 +5,13 @@ using UnityEngine;
 public class monkeyShapeScript : MonoBehaviour
 {
 
+
     public SkinnedMeshRenderer ref_MONKEY_DEF;
-    public float ratio_1 = 85.0f;       //
-    public float ratio_2 = 85.0f;       //
-    public float ratio_3 = 0.0f;        //
-    public float ratio_4 = 0.0f;        //
-    public float ratio_5 = 0.0f;        //
+    public float ratio_1 = 0.0f;    //変形度合い（0.0 ～ 100.0）
+    public float ratio_2 = 0.0f;    //変形度合い（0.0 ～ 100.0）
+    public float ratio_3 = 0.0f;    //変形度合い（0.0 ～ 100.0）
+    public float ratio_4 = 0.0f;    //変形度合い（0.0 ～ 100.0）
+    public float ratio_5 = 0.0f;    //変形度合い（0.0 ～ 100.0）
 
     [SerializeField]
     GameObject pMonkey;
