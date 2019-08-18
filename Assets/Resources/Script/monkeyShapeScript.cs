@@ -7,10 +7,12 @@ public class monkeyShapeScript : MonoBehaviour
 
 
     public SkinnedMeshRenderer faceMotion;
+
+    [SerializeField, Range(0, 100)]
     //変形度合い（0.0 ～ 100.0）
-    public float key_Q, key_W, key_E, key_R, key_T, key_Y, key_U, key_I, key_O, key_P;
-    public float key_A, key_S, key_D, key_F, key_G, key_H, key_J, key_K, key_L;
-    public float key_Z, key_X, key_C, key_V, key_B, key_N, key_M;
+    public int key_Q, key_W, key_E, key_R, key_T, key_Y, key_U, key_I, key_O, key_P,
+                key_A, key_S, key_D, key_F, key_G, key_H, key_J, key_K, key_L,
+                key_Z, key_X, key_C, key_V, key_B, key_N, key_M;
 
     [SerializeField]
     GameObject pMonkey;
@@ -30,7 +32,7 @@ public class monkeyShapeScript : MonoBehaviour
 
     void ShapeChange()
     {
-        faceMotion.SetBlendShapeWeight( 0, key_Q);
+        faceMotion.SetBlendShapeWeight( 0, key_Q);          //右目閉じる
         //faceMotion.SetBlendShapeWeight( 1, key_W);
         //faceMotion.SetBlendShapeWeight( 2, key_E);
         //faceMotion.SetBlendShapeWeight( 3, key_R);
@@ -106,22 +108,22 @@ public class monkeyShapeScript : MonoBehaviour
         }
     }
 
-    float RatioUp(float ratio)
+    int RatioUp(int ratio)
     {
-        ratio += 5.0f;
-        if (ratio > 100.0f)
+        ratio += 5;
+        if (ratio > 100)
         {
-            ratio = 100.0f;
+            ratio = 100;
         }
         return ratio;
     }
 
-    float RatioDown(float ratio)
+    int RatioDown(int ratio)
     {
-        ratio -= 10.0f;
-        if (ratio < 0.0f)
+        ratio -= 10;
+        if (ratio < 0)
         {
-            ratio = 0.0f;
+            ratio = 0;
         }
         return ratio;
     }
