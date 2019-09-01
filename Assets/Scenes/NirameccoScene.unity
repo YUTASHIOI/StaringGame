@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 164403879}
   - component: {fileID: 164403880}
   m_Layer: 0
-  m_Name: chopstick_lower
+  m_Name: CSLeft_Child
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -251,8 +251,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 534486822}
+  - component: {fileID: 534486823}
   m_Layer: 0
-  m_Name: lower_root
+  m_Name: CSLeft_Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -273,6 +274,20 @@ Transform:
   m_Father: {fileID: 1196118672}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &534486823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534486821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e98fb07382197dd449d451d8188a505d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseController: {fileID: 1572228831}
+  CSChildController: {fileID: 164403880}
 --- !u!1 &703539903
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,7 +426,7 @@ GameObject:
   - component: {fileID: 1121968230}
   - component: {fileID: 1121968231}
   m_Layer: 0
-  m_Name: chopstick_upper
+  m_Name: CSRight_Child
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -527,32 +542,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1196118672}
-  - component: {fileID: 1196118671}
   m_Layer: 0
-  m_Name: chopsticks
+  m_Name: Chopsticks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1196118671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1196118670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4a1c0621941c674ea3ca04c3623ca3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseController: {fileID: 1572228831}
-  upper_root: {fileID: 1350246709}
-  lower_root: {fileID: 534486822}
-  chopstick_upper: {fileID: 1121968231}
-  chopstick_lower: {fileID: 164403880}
-  pinch_speed: 0
 --- !u!4 &1196118672
 Transform:
   m_ObjectHideFlags: 0
@@ -578,8 +574,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1350246709}
+  - component: {fileID: 1350246710}
   m_Layer: 0
-  m_Name: upper_root
+  m_Name: CSRight_Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -600,6 +597,19 @@ Transform:
   m_Father: {fileID: 1196118672}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1350246710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350246708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91307acb922f30b49b470054e3ae4b4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseController: {fileID: 1572228831}
 --- !u!1 &1422706929
 GameObject:
   m_ObjectHideFlags: 0
