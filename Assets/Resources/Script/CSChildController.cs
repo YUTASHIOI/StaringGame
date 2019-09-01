@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChopstickController : MonoBehaviour
+public class CSChildController : MonoBehaviour
 {
     public bool on_trigger;//モノに触れたかどうか
     /*------------------------------------------------------------------*
