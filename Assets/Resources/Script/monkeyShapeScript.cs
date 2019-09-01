@@ -34,7 +34,8 @@ public class monkeyShapeScript : MonoBehaviour
     void Update()
     {
         //KeyInput();
-        KeyInputSwitch();
+        //KeyInputSwitch();
+        JoypadInputSwitch();
         ShapeChange();
     }
 
@@ -185,6 +186,7 @@ public class monkeyShapeScript : MonoBehaviour
     }
     
     //押してる間変化------------------------
+    /*
     void KeyInputSwitch()
     {
         //Qキー
@@ -242,6 +244,80 @@ public class monkeyShapeScript : MonoBehaviour
             key_I_Switch = UpOrDownSwitch(key_I, key_I_Switch);
             key_I = UpDown(key_I, key_I_Switch);
         }
+    }
+    */
+
+    //ジョイパッドで操作
+    void JoypadInputSwitch()
+    {
+        if (Input.GetButton("〇ボタン"))
+        {
+            key_U = RatioUp(key_U);
+        }
+        else
+        {
+            key_U = RatioDown(key_U);
+        }
+        
+        if (Input.GetButton("×ボタン"))
+        {
+            key_I = RatioUp(key_I);
+        }
+        else
+        {
+            key_I = RatioDown(key_I);
+        }
+
+        if (Input.GetButton("△ボタン"))
+        {
+            key_E = RatioUp(key_E);
+        }
+        else
+        {
+            key_E = RatioDown(key_E);
+        }
+
+        if (Input.GetButton("□ボタン"))
+        {
+            key_R = RatioUp(key_R);
+        }
+        else
+        {
+            key_R = RatioDown(key_R);
+        }
+
+        if (Input.GetButton("L1ボタン"))
+        {
+            key_T = RatioUp(key_T);
+        }
+        else
+        {
+            key_T = RatioDown(key_T);
+        }
+
+        if (Input.GetButton("R1ボタン"))
+        {
+            key_Y = RatioUp(key_Y);
+        }
+        else
+        {
+            key_Y = RatioDown(key_Y);
+        }
+
+        //if (Input.GetButton("L2（デジタル）"))
+        //{
+        //    key_U_Switch = UpOrDownSwitch(key_U, key_U_Switch);
+        //    key_U = UpDown(key_U, key_U_Switch);
+        //}
+        //
+        //if (Input.GetButton("R2（デジタル）"))
+        //{
+        //    key_I_Switch = UpOrDownSwitch(key_I, key_I_Switch);
+        //    key_I = UpDown(key_I, key_I_Switch);
+        //}
+
+        key_Q = (int)(Input.GetAxis("L2（アナログ）") * 50.0f) + 50;
+        key_W = (int)(Input.GetAxis("R2（アナログ）") * 50.0f) + 50;
     }
 
     int UpDown(int key, bool Switch)
