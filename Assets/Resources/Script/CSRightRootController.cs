@@ -1,11 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
-public class RightCSRootController : MonoBehaviour
+public class CSRightRootController : MonoBehaviour
 {
-    [SerializeField, TooltipAttribute("デバッグ用")]　MouseController mouseController;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +14,7 @@ public class RightCSRootController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log("hitt");
+        this.transform.DOMove(endValue: new Vector3(5.0f, 0.5f, 0), duration: 2.0f);
     }
 }
