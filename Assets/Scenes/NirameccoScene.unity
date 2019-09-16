@@ -286,7 +286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98fb07382197dd449d451d8188a505d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Z_Range: -10
+  mouseController: {fileID: 1572228831}
+  CSChildController: {fileID: 164403880}
 --- !u!1 &703539903
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,7 +624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91307acb922f30b49b470054e3ae4b4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Z_Range: 15
+  mouseController: {fileID: 1572228831}
 --- !u!1 &1422706929
 GameObject:
   m_ObjectHideFlags: 0
