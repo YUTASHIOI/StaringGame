@@ -41,23 +41,23 @@ public class monkeyShapeScript : MonoBehaviour
 
     void ShapeChange()
     {
-        faceMotion.SetBlendShapeWeight( 0, key_Q);          //右目閉じる
-        faceMotion.SetBlendShapeWeight( 1, key_W);
-        faceMotion.SetBlendShapeWeight( 2, key_E);
-        faceMotion.SetBlendShapeWeight( 3, key_R);
-        faceMotion.SetBlendShapeWeight( 4, key_T);
-        faceMotion.SetBlendShapeWeight( 5, key_Y);
-        faceMotion.SetBlendShapeWeight( 6, key_U);
-        faceMotion.SetBlendShapeWeight( 7, key_I);
-        //faceMotion.SetBlendShapeWeight( 8, key_O);
-        //faceMotion.SetBlendShapeWeight( 9, key_P);
-        //faceMotion.SetBlendShapeWeight(10, key_A);
-        //faceMotion.SetBlendShapeWeight(11, key_S);
-        //faceMotion.SetBlendShapeWeight(12, key_D);
-        //faceMotion.SetBlendShapeWeight(13, key_F);
-        //faceMotion.SetBlendShapeWeight(14, key_G);
-        //faceMotion.SetBlendShapeWeight(15, key_H);
-        //faceMotion.SetBlendShapeWeight(16, key_J);
+        faceMotion.SetBlendShapeWeight( 0, (float)key_Q);          //右目閉じる
+        faceMotion.SetBlendShapeWeight( 1, (float)key_W);
+        faceMotion.SetBlendShapeWeight( 2, (float)key_E);
+        faceMotion.SetBlendShapeWeight( 3, (float)key_R);
+        faceMotion.SetBlendShapeWeight( 4, (float)key_T);
+        faceMotion.SetBlendShapeWeight( 5, (float)key_Y);
+        faceMotion.SetBlendShapeWeight( 6, (float)key_U);
+        faceMotion.SetBlendShapeWeight( 7, (float)key_I);
+        faceMotion.SetBlendShapeWeight( 8, (float)key_O);
+        faceMotion.SetBlendShapeWeight( 9, (float)key_P);
+        faceMotion.SetBlendShapeWeight(10, (float)key_A);
+        faceMotion.SetBlendShapeWeight(11, (float)key_S);
+        faceMotion.SetBlendShapeWeight(12, (float)key_D);
+        faceMotion.SetBlendShapeWeight(13, (float)key_F);
+        faceMotion.SetBlendShapeWeight(14, (float)key_G);
+        faceMotion.SetBlendShapeWeight(15, (float)key_H);
+        //faceMotion.SetBlendShapeWeight(16, (float)key_J);
         //faceMotion.SetBlendShapeWeight(17, key_K);
         //faceMotion.SetBlendShapeWeight(18, key_L);
         //faceMotion.SetBlendShapeWeight(19, key_Z);
@@ -304,6 +304,41 @@ public class monkeyShapeScript : MonoBehaviour
             key_Y = RatioDown(key_Y);
         }
 
+        if (Input.GetButton("Shareボタン"))
+        {
+            key_O = RatioUp(key_O);
+        }
+        else
+        {
+            key_O = RatioDown(key_O);
+        }
+
+        if (Input.GetButton("Option"))
+        {
+            key_P = RatioUp(key_P);
+        }
+        else
+        {
+            key_P = RatioDown(key_P);
+        }
+
+        if (Input.GetButton("PSボタン"))
+        {
+            key_A = RatioUp(key_A);
+        }
+        else
+        {
+            key_A = RatioDown(key_A);
+        }
+
+        if (Input.GetButton("トラックパッド押し込み"))
+        {
+            key_S = RatioUp(key_S);
+        }
+        else
+        {
+            key_S = RatioDown(key_S);
+        }
         //if (Input.GetButton("L2（デジタル）"))
         //{
         //    key_U_Switch = UpOrDownSwitch(key_U, key_U_Switch);
@@ -315,6 +350,44 @@ public class monkeyShapeScript : MonoBehaviour
         //    key_I_Switch = UpOrDownSwitch(key_I, key_I_Switch);
         //    key_I = UpDown(key_I, key_I_Switch);
         //}
+
+        if (Input.GetAxis("十字キー左右") >= 0.5)
+        {
+            key_D = RatioUp(key_D);
+        }
+        else
+        {
+            key_D = RatioDown(key_D);
+        }
+
+        if (Input.GetAxis("十字キー左右") <= -0.5)
+        {
+            key_F = RatioUp(key_F);
+        }
+        else
+        {
+            key_F = RatioDown(key_F);
+        }
+
+        if (Input.GetAxis("十字キー上下") >= 0.5)
+        {
+            key_G = RatioUp(key_G);
+        }
+        else
+        {
+            key_G = RatioDown(key_G);
+        }
+
+        if (Input.GetAxis("十字キー上下") <= -0.5)
+        {
+            key_H = RatioUp(key_H);
+        }
+        else
+        {
+            key_H = RatioDown(key_H);
+        }
+
+        Debug.Log(Input.GetAxis("十字キー上下"));
 
         key_Q = (int)(Input.GetAxis("L2（アナログ）") * 50.0f) + 50;
         key_W = (int)(Input.GetAxis("R2（アナログ）") * 50.0f) + 50;

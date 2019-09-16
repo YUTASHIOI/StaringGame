@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e391cc4a8e4787b4791947523343a1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faceMotion: {fileID: 5170352428510779621, guid: 6c480701c0c497444a2cc7ffa6d97870,
+  faceMotion: {fileID: 8444684222920687027, guid: f1831059ce8c44f48ae3ed890f67f5ab,
     type: 3}
   key_Q: 0
   key_W: 0
@@ -178,7 +178,7 @@ MonoBehaviour:
   key_N: 0
   key_M: 0
   transSpeed: 4
-  pMonkey: {fileID: 8935247879604509023, guid: 6c480701c0c497444a2cc7ffa6d97870, type: 3}
+  pMonkey: {fileID: 7997851203873314453, guid: f1831059ce8c44f48ae3ed890f67f5ab, type: 3}
   key_Q_Switch: 0
   key_W_Switch: 0
   key_E_Switch: 0
