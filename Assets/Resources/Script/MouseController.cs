@@ -27,7 +27,7 @@ public class MouseController : MonoBehaviour
         if (Input.GetMouseButtonUp(1))   right_button = false;
         if (Input.GetMouseButtonUp(2))   middle_button = false;
 
-       // Debug.Log(left_button + ":" + middle_button + ":" + right_button);
+        Debug.Log(left_button + ":" + middle_button + ":" + right_button);
 
     }
 }
