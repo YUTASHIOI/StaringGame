@@ -5,8 +5,10 @@ using UnityEngine;
 public class CSLeftRootController : MonoBehaviour
 {
     [SerializeField]
-    float Z_Range = -10f;            //Z軸に対する箸の可動域
-
+    float Z_Range = -10f;                //Z軸に対する箸の可動域
+    [SerializeField]
+    CSChildController CSChildController; //当たり判定
+    private Quaternion pre_pos;
 
     /*----------------------------------------------------*
      * ◆初期化関数
@@ -14,6 +16,7 @@ public class CSLeftRootController : MonoBehaviour
     void Init()
     {
         this.transform.localPosition = new Vector3(0f, -5f, 0f);
+        pre_pos = Quaternion.Euler(0f, 0f, 0f);
     }
 
     // Start is called before the first frame update
@@ -26,13 +29,15 @@ public class CSLeftRootController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        pre_pos = this.transform.localRotation;
+
         if (Input.GetButton("L2（デジタル）"))
         {
             this.transform.localRotation = Quaternion.Euler(
-                0f, 
-                0f, 
-                Z_Range * ((Input.GetAxis("L2（アナログ）") + 1f) / 2f)
-                );
+            0f,
+            0f,
+            Z_Range * ((Input.GetAxis("L2（アナログ）") + 1f) / 2f)
+            );
         }
         else
         {

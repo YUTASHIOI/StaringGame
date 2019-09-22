@@ -5,10 +5,11 @@ using UnityEngine;
 public class ChopsticsController : MonoBehaviour
 {
     [SerializeField]
-    float MoveRange = 30f;            //Z軸に対する箸の可動域
+    float MoveRange = 30f;         //Z軸に対する箸の可動域
     [SerializeField]
-    float Z_pos = -30f;            //Z軸に対する箸の可動域
-
+    float noize = 0.3f;           //移動量がnoize以下なら削除
+    [SerializeField]
+    private Vector3 init_pos = new Vector3(8f, -35f, -30f);     //初期位置
     private Vector3 pos;
     // Start is called before the first frame update
 
@@ -17,21 +18,28 @@ public class ChopsticsController : MonoBehaviour
      *----------------------------------------------------*/
     void Init()
     {
-        pos = new Vector3(0, 0, Z_pos);
+        this.transform.localPosition = init_pos;
     }
     void Start()
     {
-        
+        Init();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Input.GetAxis("L_Vertical")+":"+Input.GetAxis("L_Vertical"));
+        //Debug.Log(Mathf.Abs(Input.GetAxis("L_Vertical"))+ Mathf.Abs(Input.GetAxis("L_Vertical")));
 
-        pos.x = Input.GetAxis("L_Horizontal") * MoveRange;
-        pos.y = Input.GetAxis("L_Vertical")   *-MoveRange;
-        pos.z = Z_pos;
-        this.transform.localPosition = pos;
+        if (Mathf.Abs(Input.GetAxis("L_Vertical")) + Mathf.Abs(Input.GetAxis("L_Vertical")) > noize)
+        {
+            pos.x = Input.GetAxis("L_Horizontal") * MoveRange + init_pos.x;
+            pos.y = Input.GetAxis("L_Vertical") * -MoveRange + init_pos.y;
+            pos.z = init_pos.z;
+            this.transform.localPosition = pos;
+        }
+        else
+        {
+            this.transform.localPosition = init_pos;
+        }
     }
 }
