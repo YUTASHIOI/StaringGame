@@ -8,7 +8,7 @@ public class monkeyShapeScript : MonoBehaviour
 
     public SkinnedMeshRenderer faceMotion;
 
-    [SerializeField, Range(0, 100)]
+    [SerializeField, Range(0, 1000)]
     //変形度合い（0.0 ～ 100.0）
     private int key_Q, key_W, key_E, key_R, key_T, key_Y, key_U, key_I, key_O, key_P,
                 key_A, key_S, key_D, key_F, key_G, key_H, key_J, key_K, key_L,
@@ -184,68 +184,6 @@ public class monkeyShapeScript : MonoBehaviour
             key_A = RatioDown(key_A);
         }
     }
-    
-    //押してる間変化------------------------
-    /*
-    void KeyInputSwitch()
-    {
-        //Qキー
-        if (Input.GetKey(KeyCode.Q))
-        {
-            key_Q_Switch = UpOrDownSwitch(key_Q, key_Q_Switch);
-            key_Q = UpDown(key_Q, key_Q_Switch);
-        }
-
-        //Wキー
-        if (Input.GetKey(KeyCode.W))
-        {
-            key_W_Switch = UpOrDownSwitch(key_W, key_W_Switch);
-            key_W = UpDown(key_W, key_W_Switch);
-        }
-
-        //Eキー
-        if (Input.GetKey(KeyCode.E))
-        {
-            key_E_Switch = UpOrDownSwitch(key_E, key_E_Switch);
-            key_E = UpDown(key_E, key_E_Switch);
-        }
-
-        //Rキー
-        if (Input.GetKey(KeyCode.R))
-        {
-            key_R_Switch = UpOrDownSwitch(key_R, key_R_Switch);
-            key_R = UpDown(key_R, key_R_Switch);
-        }
-
-        //Tキー
-        if (Input.GetKey(KeyCode.T))
-        {
-            key_T_Switch = UpOrDownSwitch(key_T, key_T_Switch);
-            key_T = UpDown(key_T, key_T_Switch);
-        }
-
-        //Yキー
-        if (Input.GetKey(KeyCode.Y))
-        {
-            key_Y_Switch = UpOrDownSwitch(key_Y, key_Y_Switch);
-            key_Y = UpDown(key_Y, key_Y_Switch);
-        }
-
-        //Uキー
-        if (Input.GetKey(KeyCode.U))
-        {
-            key_U_Switch = UpOrDownSwitch(key_U, key_U_Switch);
-            key_U = UpDown(key_U, key_U_Switch);
-        }
-
-        //Iキー
-        if (Input.GetKey(KeyCode.I))
-        {
-            key_I_Switch = UpOrDownSwitch(key_I, key_I_Switch);
-            key_I = UpDown(key_I, key_I_Switch);
-        }
-    }
-    */
 
     //ジョイパッドで操作
     void JoypadInputSwitch()
