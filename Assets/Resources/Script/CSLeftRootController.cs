@@ -5,7 +5,7 @@ using UnityEngine;
 public class CSLeftRootController : MonoBehaviour
 {
     [SerializeField]
-    float Z_Range = -10f;                //Z軸に対する箸の可動域
+    float Z_Range;                //Z軸に対する箸の可動域
     [SerializeField]
     CSChildController CSChildController; //当たり判定
     private Quaternion pre_pos;
