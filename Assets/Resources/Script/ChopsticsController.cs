@@ -37,7 +37,6 @@ public class ChopsticsController : MonoBehaviour
         if (Mathf.Abs(Input.GetAxis("L_Vertical")) + Mathf.Abs(Input.GetAxis("L_Vertical")) > noize)
         {
             tmp_pos.x += Input.GetAxis("L_Horizontal") * move_speed;// + init_pos.x;
-
             tmp_pos.y += Input.GetAxis("L_Vertical") * -move_speed;// + init_pos.y;
             tmp_pos.z = init_pos.z;
 

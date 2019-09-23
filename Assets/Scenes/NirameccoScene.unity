@@ -570,8 +570,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   move_range: {x: 0, y: 30}
   init_pos: {x: 20, y: 0, z: -30}
-  move_speed: 30
-  noize: 0.03
+  move_speed: 1
+  noize: 0.2
 --- !u!4 &1196118672
 Transform:
   m_ObjectHideFlags: 0
