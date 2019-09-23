@@ -24,8 +24,6 @@ public class CSRightRootController : MonoBehaviour
     {
         Init();
     }
-
-
     // Update is called once per frame
     void Update()
     {
