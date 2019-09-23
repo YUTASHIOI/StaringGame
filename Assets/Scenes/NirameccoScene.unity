@@ -568,9 +568,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a09f55aae21e9734a9474fa756d6f9bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveRange: 30
+  move_range: {x: 0, y: 30}
+  init_pos: {x: 20, y: 0, z: -30}
+  move_speed: 30
   noize: 0.03
-  init_pos: {x: 8, y: -35, z: -30}
 --- !u!4 &1196118672
 Transform:
   m_ObjectHideFlags: 0
