@@ -15,14 +15,22 @@ public class SeedController : MonoBehaviour
      *------------------------------------------------------------------*/
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("hitt");
+        //Debug.Log("hitt");
+        //どの箸に衝突したかフラグの更新
         if(other.gameObject.name == "CSRight_Child") on_right = true;
         if (other.gameObject.name == "CSLeft_Child") on_left = true;
+
+        //箸に衝突したら種を動かす
+        Vector3 force = (transform.position - other.ClosestPointOnBounds(this.transform.position)).normalized * 100f;
+        // 力を加える
+        this.GetComponent<Rigidbody>().AddForce(force);
+
         if (on_right && on_left)
         {
             Debug.Log("きたああ");
             this.gameObject.transform.parent = GameObject.FindWithTag("chopsticks").gameObject.transform;
-        }
+        } 
+
     }
     /*------------------------------------------------------------------*
      * ◆箸がモノから離れたとき
