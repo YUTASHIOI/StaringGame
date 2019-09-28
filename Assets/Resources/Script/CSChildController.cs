@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CSChildController : MonoBehaviour
 {
+    [SerializeField]
+    ChopsticsController ChopsticksController;
     public bool on_trigger;//モノに触れたかどうか
     public bool on_collision;//モノに触れたかどうか
 
@@ -41,6 +43,7 @@ public class CSChildController : MonoBehaviour
     {
         this.transform.localPosition = Vector3.zero;
         this.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+        this.transform.localScale = ChopsticksController.chopstick;
 
         on_trigger = false;
         on_collision = false;
