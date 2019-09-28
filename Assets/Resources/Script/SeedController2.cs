@@ -23,6 +23,8 @@ public class SeedController2 : MonoBehaviour
         {
             Instantiate(pSeed, new Vector3(ER_Pos.x, EL_Pos.y, ER_Pos.z - Seed_Pos_def), Quaternion.identity);
         }
+
+        
     }
 
     // Update is called once per frame
