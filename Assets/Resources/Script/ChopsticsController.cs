@@ -5,9 +5,9 @@ using UnityEngine;
 public class ChopsticsController : MonoBehaviour
 {
     [SerializeField]
-    private Vector3 init_pos;   //初期位置
+    public Vector3 chopstick;　//箸の長さ
     [SerializeField]
-    float chopsticks_length;    //箸の長さ
+    private Vector3 init_pos;   //初期位置
     [SerializeField]
     Vector2 move_range;         //箸の可動域
     [SerializeField]
@@ -38,13 +38,18 @@ public class ChopsticsController : MonoBehaviour
 
         if (Mathf.Abs(Input.GetAxis("L_Vertical")) + Mathf.Abs(Input.GetAxis("L_Vertical")) > noize)
         {
-            tmp_pos.x += Input.GetAxis("L_Horizontal") * move_speed;// + init_pos.x;
-            if (tmp_pos.x > move_range.x) tmp_pos.x = move_range.x;
+            //X軸
+            tmp_pos.x += Input.GetAxis("L_Horizontal") * move_speed;
+            if (tmp_pos.x > move_range.x - chopstick.x) tmp_pos.x = move_range.x - chopstick.x;
             else if (tmp_pos.x < -move_range.x) tmp_pos.x = -move_range.x;
-
-            tmp_pos.y += Input.GetAxis("L_Vertical") * -move_speed;// + init_pos.y;
+            //Y軸
+            tmp_pos.y += Input.GetAxis("L_Vertical") * -move_speed;
+            if (tmp_pos.y > move_range.y + 2f) tmp_pos.y = move_range.y + 2f;
+            else if (tmp_pos.y < -move_range.y) tmp_pos.y = -move_range.y;
+            //Z軸
             tmp_pos.z = init_pos.z;
 
+            //コントローラーの値を代入する
             this.transform.localPosition = tmp_pos;
         }
         else
