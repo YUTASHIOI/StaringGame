@@ -14,8 +14,15 @@ public class SeedController2 : MonoBehaviour
     void Start()
     {
         Vector3 ER_Pos = Eye_R.transform.position;
-        Instantiate(pSeed, new Vector3(0.0f, 0.0f, -2.0f), Quaternion.identity);
-        //Instantiate(pSeed, new Vector3(ER_Pos.x, ER_Pos.y, ER_Pos.z - Seed_Pos_def), Quaternion.identity);
+        Vector3 EL_Pos = Eye_L.transform.position;
+        if (Random.Range(-1.0f, 1.0f) < -1.0)
+        {
+            Instantiate(pSeed, new Vector3(ER_Pos.x, ER_Pos.y, ER_Pos.z - Seed_Pos_def), Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(pSeed, new Vector3(ER_Pos.x, EL_Pos.y, ER_Pos.z - Seed_Pos_def), Quaternion.identity);
+        }
     }
 
     // Update is called once per frame

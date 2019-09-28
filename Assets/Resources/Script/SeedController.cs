@@ -5,10 +5,6 @@ using UnityEngine;
 public class SeedController : MonoBehaviour
 {
     [SerializeField]
-    Vector3 init_pos = new Vector3(-11f, -33f, -30f);
-    [SerializeField]
-    Quaternion init_rot = Quaternion.Euler(0f, 0f, 0f);
-    [SerializeField]
     GameObject chopsticks;
 
     private bool on_right = false;
@@ -47,9 +43,6 @@ public class SeedController : MonoBehaviour
      *----------------------------------------------------*/
     void Init()
     {
-        //初期Transform
-        this.transform.localPosition = init_pos;
-        this.transform.localRotation = init_rot;
         //箸に触れているかどうかの判定
         on_right = false;
         on_left = false;

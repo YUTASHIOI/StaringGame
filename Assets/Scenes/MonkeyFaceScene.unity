@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e391cc4a8e4787b4791947523343a1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faceMotion: {fileID: 963849823121939693, guid: 4d9381b20974f744c8c47c3b5010b796,
+  faceMotion: {fileID: 3861472432101758409, guid: 69d1290801d5f9046a959fbccb14b6ac,
     type: 3}
   key_Q: 0
   key_W: 0
@@ -178,7 +178,7 @@ MonoBehaviour:
   key_N: 0
   key_M: 0
   transSpeed: 4
-  pMonkey: {fileID: 1634754480929339339, guid: 4d9381b20974f744c8c47c3b5010b796, type: 3}
+  pMonkey: {fileID: 3339749472843824879, guid: 69d1290801d5f9046a959fbccb14b6ac, type: 3}
   key_Q_Switch: 0
   key_W_Switch: 0
   key_E_Switch: 0
@@ -278,75 +278,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: -87.735, z: 0}
---- !u!1001 &346740900
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1634754480929339339, guid: 4d9381b20974f744c8c47c3b5010b796,
-        type: 3}
-      propertyPath: m_Name
-      value: TSUDA_190916
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374673892793091544, guid: 4d9381b20974f744c8c47c3b5010b796,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374673892793091544, guid: 4d9381b20974f744c8c47c3b5010b796,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374673892793091544, guid: 4d9381b20974f744c8c47c3b5010b796,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374673892793091544, guid: 4d9381b20974f744c8c47c3b5010b796,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374673892793091544, guid: 4d9381b20974f744c8c47c3b5010b796,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374673892793091544, guid: 4d9381b20974f744c8c47c3b5010b796,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374673892793091544, guid: 4d9381b20974f744c8c47c3b5010b796,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374673892793091544, guid: 4d9381b20974f744c8c47c3b5010b796,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374673892793091544, guid: 4d9381b20974f744c8c47c3b5010b796,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374673892793091544, guid: 4d9381b20974f744c8c47c3b5010b796,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374673892793091544, guid: 4d9381b20974f744c8c47c3b5010b796,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4d9381b20974f744c8c47c3b5010b796, type: 3}
 --- !u!1 &457703759
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,7 +296,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &457703760
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -436,7 +367,7 @@ Transform:
   m_LocalScale: {x: 25, y: 25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1025350375
 GameObject:
@@ -809,7 +740,7 @@ MonoBehaviour:
   pSeed: {fileID: 2092292588858408015, guid: 9b97e5d095298874eba0eecb273a608f, type: 3}
   Eye_R: {fileID: 1625110781}
   Eye_L: {fileID: 187315624}
-  Seed_Pos_def: 0
+  Seed_Pos_def: 3.5
 --- !u!4 &1929995761
 Transform:
   m_ObjectHideFlags: 0
