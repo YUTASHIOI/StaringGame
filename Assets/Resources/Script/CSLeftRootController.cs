@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class CSLeftRootController : MonoBehaviour
 {
-    [SerializeField]
+    [SerializeField, TooltipAttribute("初期位置")]
+    private Vector3 init_pos;   //初期位置
+    [SerializeField, TooltipAttribute("箸の回転角度")]
     float Z_Range;                //Z軸に対する箸の可動域
     [SerializeField]
     CSChildController CSChildController; //当たり判定
@@ -15,7 +17,7 @@ public class CSLeftRootController : MonoBehaviour
      *----------------------------------------------------*/
     void Init()
     {
-        this.transform.localPosition = new Vector3(0f, -5f, 0f);
+        this.transform.localPosition = init_pos;
         pre_pos = Quaternion.Euler(0f, 0f, 0f);
     }
 

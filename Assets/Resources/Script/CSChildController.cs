@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class CSChildController : MonoBehaviour
 {
-    [SerializeField]
-    Vector3 pos = Vector3.zero;
-    [SerializeField]
-    Quaternion rot = Quaternion.Euler(0f, 0f, 0f);
-
     public bool on_trigger;//モノに触れたかどうか
     public bool on_collision;//モノに触れたかどうか
+
     /*------------------------------------------------------------------*
      * ◆箸がモノに触れたとき
      *------------------------------------------------------------------*/
@@ -43,8 +39,11 @@ public class CSChildController : MonoBehaviour
 
     void Init()
     {
-        this.transform.localPosition = pos;
-        this.transform.localRotation = rot;
+        this.transform.localPosition = Vector3.zero;
+        this.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+
+        on_trigger = false;
+        on_collision = false;
     }
 
     // Start is called before the first frame update

@@ -5,9 +5,11 @@ using UnityEngine;
 public class ChopsticsController : MonoBehaviour
 {
     [SerializeField]
-    Vector2 move_range;          //箸の可動域
-    [SerializeField]
     private Vector3 init_pos;   //初期位置
+    [SerializeField]
+    float chopsticks_length;    //箸の長さ
+    [SerializeField]
+    Vector2 move_range;         //箸の可動域
     [SerializeField]
     float move_speed;           //移動量
     [SerializeField]

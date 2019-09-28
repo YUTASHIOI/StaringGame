@@ -241,7 +241,7 @@ Transform:
   m_GameObject: {fileID: 164403874}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8, y: 0, z: 0}
-  m_LocalScale: {x: 30, y: 1, z: 1}
+  m_LocalScale: {x: 16.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 534486822}
   m_RootOrder: 0
@@ -380,7 +380,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98fb07382197dd449d451d8188a505d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Z_Range: -10
+  init_pos: {x: 0, y: -2, z: 0}
+  Z_Range: -5
   CSChildController: {fileID: 164403880}
 --- !u!1 &703539903
 GameObject:
@@ -535,7 +536,7 @@ Transform:
   m_GameObject: {fileID: 1121968225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8, y: 0, z: 0}
-  m_LocalScale: {x: 30, y: 1, z: 1}
+  m_LocalScale: {x: 16.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1350246709}
   m_RootOrder: 0
@@ -659,8 +660,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a09f55aae21e9734a9474fa756d6f9bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move_range: {x: 50, y: 30}
-  init_pos: {x: 20, y: 0, z: -30}
+  move_range: {x: 10, y: 10}
+  init_pos: {x: 0, y: -10, z: -11}
   move_speed: 1
   noize: 0
 --- !u!4 &1196118672
@@ -671,7 +672,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196118670}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8, y: -33.05, z: -30}
+  m_LocalPosition: {x: 0, y: -10, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 129922327}
@@ -724,7 +725,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91307acb922f30b49b470054e3ae4b4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Z_Range: 13
+  init_pos: {x: 0, y: 2, z: 0}
+  Z_Range: 8
   CSChildController: {fileID: 1121968231}
 --- !u!1 &1422706929
 GameObject:
@@ -905,7 +907,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 914d6027938f7de4c8114f08fe2842c8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -992,6 +994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c002dc3e668ecb469508b264c9d65ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aspect: 1.777777
 --- !u!1 &1661818975
 GameObject:
   m_ObjectHideFlags: 0
