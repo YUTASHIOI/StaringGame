@@ -4,32 +4,28 @@ using UnityEngine;
 
 public class SeedController2 : MonoBehaviour
 {
-    [SerializeField]
-    GameObject pSeed, Eye_R, Eye_L;
+    Vector3 Center_Pos = new Vector3(0.0f, 0.0f, 0.0f);
 
-    [SerializeField]
-    float Seed_Pos_def;
+    public Rigidbody rb;
+    Vector3 down = new Vector3(0.0f, -0.8f, 0.0f);
 
     // Start is called before the first frame update
     void Start()
     {
-        Vector3 ER_Pos = Eye_R.transform.position;
-        Vector3 EL_Pos = Eye_L.transform.position;
-        if (Random.Range(-1.0f, 1.0f) < -1.0)
-        {
-            Instantiate(pSeed, new Vector3(ER_Pos.x, ER_Pos.y, ER_Pos.z - Seed_Pos_def), Quaternion.identity);
-        }
-        else
-        {
-            Instantiate(pSeed, new Vector3(ER_Pos.x, EL_Pos.y, ER_Pos.z - Seed_Pos_def), Quaternion.identity);
-        }
-
-        
+        rb = GetComponent<Rigidbody>();
+        rb.AddForce(down, ForceMode.Impulse);
     }
+
 
     // Update is called once per frame
     void Update()
     {
-        
+        Vector3 distance = Center_Pos - this.transform.position;
+        float magni = distance.sqrMagnitude;
+        Debug.Log("magni:" + magni);
+        if (magni > 80.0f)
+        {
+            rb.AddForce(distance/3, ForceMode.Force);
+        }
     }
 }
