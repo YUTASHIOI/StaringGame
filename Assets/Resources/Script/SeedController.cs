@@ -23,10 +23,13 @@ public class SeedController : MonoBehaviour
         Vector3 force = Vector3.zero;
         foreach (ContactPoint point in collision.contacts)
         {
-            force = (transform.position - point.point).normalized * 1f;
+            //箸の先に加速度取得用の空のオブジェクトを設置する
+            //箸の先からぶつかった位置が遠くなるほど、箸本来の移動速度に柄づいていく
+            force = (transform.position - point.point).normalized * 10f;
         }
         // 力を加える
-        //this.GetComponent<Rigidbody>().AddForce(force);
+        //ForceMode.VelocityChange:質量を無視して一回だけ力を加える
+        this.GetComponent<Rigidbody>().AddForce(force, ForceMode.VelocityChange);
 
         if (on_right && on_left)
         {
