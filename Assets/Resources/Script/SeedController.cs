@@ -13,17 +13,17 @@ public class SeedController : MonoBehaviour
     /*------------------------------------------------------------------*
      * ◆箸がモノに触れたとき
      *------------------------------------------------------------------*/
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider collider)
     {
         //Debug.Log("hitt");
         //どの箸に衝突したかフラグの更新
-        if(other.gameObject.name == "CSRight_Child") on_right = true;
-        if (other.gameObject.name == "CSLeft_Child") on_left = true;
+        if(collider.gameObject.name == "CSRight_Child") on_right = true;
+        if (collider.gameObject.name == "CSLeft_Child") on_left = true;
 
         //箸に衝突したら種を動かす
-        Vector3 force = (transform.position - other.ClosestPointOnBounds(this.transform.position)).normalized * 100f;
+        Vector3 force = (transform.position - collider.ClosestPointOnBounds(this.transform.position)).normalized * 1f;
         // 力を加える
-        this.GetComponent<Rigidbody>().AddForce(force);
+        this.GetComponent<Rigidbody>().AddForce(force, ForceMode.VelocityChange);
 
         if (on_right && on_left)
         {

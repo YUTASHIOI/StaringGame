@@ -60,5 +60,6 @@ public class CSChildController : MonoBehaviour
     void Update()
     {
         //Init();
+        Debug.Log(this.GetComponent<Rigidbody>().velocity);
     }
 }

@@ -580,7 +580,7 @@ PrefabInstance:
     - target: {fileID: 2092292588858408000, guid: 9b97e5d095298874eba0eecb273a608f,
         type: 3}
       propertyPath: m_Constraints
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b97e5d095298874eba0eecb273a608f, type: 3}
@@ -740,7 +740,7 @@ MonoBehaviour:
   chopstick: {x: 10, y: 0.25, z: 0.25}
   init_pos: {x: 0, y: -10, z: -11}
   move_range: {x: 24, y: 10}
-  move_speed: 2
+  move_speed: 0.2
   noize: 0
 --- !u!4 &1196118672
 Transform:
