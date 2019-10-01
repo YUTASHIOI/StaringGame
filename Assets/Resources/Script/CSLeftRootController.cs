@@ -8,8 +8,6 @@ public class CSLeftRootController : MonoBehaviour
     private Vector3 init_pos;   //初期位置
     [SerializeField, TooltipAttribute("箸の回転角度")]
     float Z_Range;                //Z軸に対する箸の可動域
-    [SerializeField]
-    CSChildController CSChildController; //当たり判定
     private Quaternion pre_pos;
 
     /*----------------------------------------------------*

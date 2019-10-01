@@ -29,7 +29,7 @@ public class CSChildController : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         on_collision = true;
-        Init();
+        //Init();
     }
     /*------------------------------------------------------------------*
      * ◆箸がモノから離れたとき
@@ -52,14 +52,15 @@ public class CSChildController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        on_trigger = false;
-        on_collision = false;
+        Init();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Init();
-        Debug.Log(this.GetComponent<Rigidbody>().velocity);
+        //【危険】
+        //CS_Right_ChildのPosとRotの値がおかしくなるので、ここで制限をかけておく
+        this.transform.localPosition = Vector3.zero;
+        this.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
     }
 }

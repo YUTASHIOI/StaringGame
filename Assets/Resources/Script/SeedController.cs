@@ -13,17 +13,20 @@ public class SeedController : MonoBehaviour
     /*------------------------------------------------------------------*
      * ◆箸がモノに触れたとき
      *------------------------------------------------------------------*/
-    void OnTriggerEnter(Collider collider)
+    void OnCollisionEnter(Collision collision)
     {
-        //Debug.Log("hitt");
         //どの箸に衝突したかフラグの更新
-        if(collider.gameObject.name == "CSRight_Child") on_right = true;
-        if (collider.gameObject.name == "CSLeft_Child") on_left = true;
+        if(collision.gameObject.name == "CSRight_Child") on_right = true;
+        if (collision.gameObject.name == "CSLeft_Child") on_left = true;
 
         //箸に衝突したら種を動かす
-        Vector3 force = (transform.position - collider.ClosestPointOnBounds(this.transform.position)).normalized * 1f;
+        Vector3 force = Vector3.zero;
+        foreach (ContactPoint point in collision.contacts)
+        {
+            force = (transform.position - point.point).normalized * 1f;
+        }
         // 力を加える
-        this.GetComponent<Rigidbody>().AddForce(force, ForceMode.VelocityChange);
+        //this.GetComponent<Rigidbody>().AddForce(force);
 
         if (on_right && on_left)
         {
@@ -35,10 +38,10 @@ public class SeedController : MonoBehaviour
     /*------------------------------------------------------------------*
      * ◆箸がモノから離れたとき
      *------------------------------------------------------------------*/
-    void OnTriggerExit(Collider other)
+    void OnCollisionExit(Collision collision)
     {
-        if (other.gameObject.name == "CSRight_Child") on_right = false;
-        if (other.gameObject.name == "CSLeft_Child") on_left = false;
+        if (collision.gameObject.name == "CSRight_Child") on_right = false;
+        if (collision.gameObject.name == "CSLeft_Child") on_left = false;
         if (!on_right || !on_left)
         {
             Debug.Log("落ちたあ");
