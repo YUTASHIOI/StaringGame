@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class ChopsticsController : MonoBehaviour
 {
-    [SerializeField]
-    public Vector3 chopstick;　//箸の長さ
-    [SerializeField]
-    private Vector3 init_pos;   //初期位置
-    [SerializeField]
-    Vector2 move_range;         //箸の可動域
-    [SerializeField]
-    float move_speed;           //移動量
-    [SerializeField]
-    float noize;                //移動量がnoize以下なら削除
+    [SerializeField, TooltipAttribute("箸モデルの大きさ")]
+    public Vector3 chopstick;
+    [SerializeField, TooltipAttribute("初期位置")]
+    private Vector3 init_pos;
+    [SerializeField, TooltipAttribute("箸の可動域")]
+    Vector2 move_range;
+    [SerializeField, TooltipAttribute("移動速度")]
+    float move_speed;
+    [SerializeField, TooltipAttribute("移動量がnoize以下なら削除")]
+    float noize;
 
 
     private Vector3 tmp_pos;    //移動量の仮置き
@@ -24,6 +24,7 @@ public class ChopsticsController : MonoBehaviour
     void Init()
     {
         this.transform.localPosition = init_pos;
+        tmp_pos = init_pos;
     }
     // Start is called before the first frame update
     void Start()

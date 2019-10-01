@@ -254,7 +254,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 164403874}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -318,7 +318,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 1
 --- !u!114 &164403880
 MonoBehaviour:
@@ -381,7 +381,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   init_pos: {x: 5, y: -1, z: 0}
   Z_Range: -7
-  CSChildController: {fileID: 164403880}
 --- !u!1 &703539903
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,6 +579,11 @@ PrefabInstance:
     - target: {fileID: 2092292588858408000, guid: 9b97e5d095298874eba0eecb273a608f,
         type: 3}
       propertyPath: m_Constraints
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092292588858408012, guid: 9b97e5d095298874eba0eecb273a608f,
+        type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -627,7 +631,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1121968225}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -691,7 +695,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 2
 --- !u!114 &1121968231
 MonoBehaviour:
@@ -738,9 +742,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chopstick: {x: 10, y: 0.25, z: 0.25}
-  init_pos: {x: 0, y: -10, z: -11}
+  init_pos: {x: 13, y: -10, z: -11}
   move_range: {x: 24, y: 10}
-  move_speed: 2
+  move_speed: 0.2
   noize: 0
 --- !u!4 &1196118672
 Transform:
@@ -750,7 +754,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196118670}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -10, z: -11}
+  m_LocalPosition: {x: 13, y: -10, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 129922327}
@@ -805,7 +809,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   init_pos: {x: 4.9, y: 1, z: 0}
   Z_Range: 13
-  CSChildController: {fileID: 1121968231}
 --- !u!1 &1422706929
 GameObject:
   m_ObjectHideFlags: 0
