@@ -802,8 +802,8 @@ MonoBehaviour:
   GameDirector: {fileID: 1572228834}
   CameraController: {fileID: 1422706934}
   chopstick: {x: 0.25, y: 10, z: 0.25}
-  move_speed: 0.2
-  noize: 0
+  move_speed: 0.5
+  noize: 0.3
   pinch_pollen_pos: {x: 0, y: -5}
 --- !u!4 &1196118672
 Transform:
