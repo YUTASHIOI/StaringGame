@@ -13,22 +13,29 @@ public class SeedDirector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Vector3 ER_Pos = Eye_R.transform.position;
-        Vector3 EL_Pos = Eye_L.transform.position;
-        if (Random.Range(-1.0f, 1.0f) < -1.0)
-        {
-            Instantiate(pSeed, new Vector3(ER_Pos.x, ER_Pos.y, ER_Pos.z - Seed_Pos_def), Quaternion.identity);
-        }
-        else
-        {
-            Instantiate(pSeed, new Vector3(ER_Pos.x, EL_Pos.y, ER_Pos.z - Seed_Pos_def), Quaternion.identity);
-        }
-
+        InstanceSeed();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown("a"))
+        {
+            InstanceSeed();
+        }
+    }
+
+    void InstanceSeed()
+    {
+        Vector3 ER_Pos = Eye_R.transform.position;
+        Vector3 EL_Pos = Eye_L.transform.position;
+        if (Random.Range(-1.0f, 1.0f) < 0.0f)
+        {
+            Instantiate(pSeed, new Vector3(ER_Pos.x, ER_Pos.y, ER_Pos.z - Seed_Pos_def), Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(pSeed, new Vector3(EL_Pos.x, EL_Pos.y, EL_Pos.z - Seed_Pos_def), Quaternion.identity);
+        }
     }
 }
