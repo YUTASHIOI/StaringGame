@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class CSRightRootController : MonoBehaviour
 {
-    [SerializeField, TooltipAttribute("x:箸の横幅, y:回転軸の位置")]
-    private Vector2 init_pos;   //初期位置
+    [SerializeField, TooltipAttribute("x:箸の横幅, y:回転軸の位置, z:箸先が花粉平面と同じになるように調整")]
+    private Vector3 init_pos;   //初期位置
+    [SerializeField, TooltipAttribute("init_pos.zと合わせて調整する")]
+    private float init_rot_x;   //初期回転
     [SerializeField, TooltipAttribute("箸の回転角度")]
     float Z_Range;            //Z軸に対する箸の可動域
 
@@ -14,7 +16,8 @@ public class CSRightRootController : MonoBehaviour
      *---------------------------------------------------------------*/
     void Init()
     {
-        this.transform.localPosition = new Vector3(init_pos.x, init_pos.y, 0f);
+        this.transform.localPosition = new Vector3(init_pos.x, init_pos.y, init_pos.z);
+        this.transform.localRotation = Quaternion.Euler(init_rot_x, 0f, 0f);
     }
     /*****************************************************************
      * Awake
@@ -37,15 +40,17 @@ public class CSRightRootController : MonoBehaviour
         if (Input.GetButton("R2（デジタル）"))
         {
             this.transform.localRotation = Quaternion.Euler(
-            0f,
+            init_rot_x,
             0f,
             Z_Range * ((Input.GetAxis("R2（アナログ）") + 1f) / 2f)
             );
         }
         else
         {
-            this.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+            this.transform.localRotation = Quaternion.Euler(init_rot_x, 0f, 0f);
         }
+
+
 
         //親から取得が一番いいかも
         //switch (GetComponent<GameDirector>().Game_Scene_T)
