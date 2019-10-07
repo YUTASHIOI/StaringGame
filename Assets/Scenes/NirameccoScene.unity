@@ -567,11 +567,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: seed
       objectReference: {fileID: 0}
-    - target: {fileID: 2092292588858408015, guid: 9b97e5d095298874eba0eecb273a608f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2092292588858408003, guid: 9b97e5d095298874eba0eecb273a608f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -627,51 +622,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2092292588858408003, guid: 9b97e5d095298874eba0eecb273a608f,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092292588858408003, guid: 9b97e5d095298874eba0eecb273a608f,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092292588858408003, guid: 9b97e5d095298874eba0eecb273a608f,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2092292588858408001, guid: 9b97e5d095298874eba0eecb273a608f,
         type: 3}
       propertyPath: chopsticks
       value: 
       objectReference: {fileID: 1196118670}
-    - target: {fileID: 2092292588858408000, guid: 9b97e5d095298874eba0eecb273a608f,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092292588858408000, guid: 9b97e5d095298874eba0eecb273a608f,
-        type: 3}
-      propertyPath: m_Drag
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092292588858408012, guid: 9b97e5d095298874eba0eecb273a608f,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2092292588858408012, guid: 9b97e5d095298874eba0eecb273a608f,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: -2314152318678324363, guid: 9b97e5d095298874eba0eecb273a608f,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b97e5d095298874eba0eecb273a608f, type: 3}
 --- !u!1 &1120018910
