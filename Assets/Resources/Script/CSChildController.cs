@@ -6,10 +6,12 @@ public class CSChildController : MonoBehaviour
 {
     [SerializeField]
     ChopsticsController ChopsticksController;
-    public bool on_trigger;     //モノに触れたかどうか
-    public bool on_collision;   //モノに触れたかどうか
+    public bool on_trigger;         //モノに触れたかどうか
+    public bool on_collision;       //モノに触れたかどうか
+    public Vector3 speed;           //箸の移動量
 
-    private Vector3 local_pos;  //箸オブジェクトの位置
+    private Vector3 local_pos;      //箸オブジェクトの位置
+    private Vector3 pre_world_pos;  //ひとつ前のふれーむの座標
 
     /*------------------------------------------------------------------*
      * ◆箸がモノに触れたとき
@@ -53,8 +55,13 @@ public class CSChildController : MonoBehaviour
      *------------------------------------------------------------------*/
     void Init()
     {
+        //----ワールド座標系
+        pre_world_pos =  this.transform.position;
+
+        //----ローカル座標系
         //箸の初期位置を設定
         local_pos.x = 0f;
+        //local_pos.y = 2f;
         local_pos.y = Mathf.Abs(gameObject.transform.parent.gameObject.transform.localPosition.y)
             - (ChopsticksController.chopstick.y / 2f);
         local_pos.z = 0f;
@@ -77,8 +84,19 @@ public class CSChildController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //【危険】
+        //----ローカル座標系
         //CS_Right_ChildのPosとRotの値がおかしくなるので、ここで制限をかけておく
         InitPosRot();
+
+        //箸の移動量を計算
+        speed　= ((this.transform.position - pre_world_pos) / Time.deltaTime);
+
+        //Debug.Log(speed.magnitude);
+
+        //----ワールド座標系
+        pre_world_pos = this.transform.position;
+
     }
 }

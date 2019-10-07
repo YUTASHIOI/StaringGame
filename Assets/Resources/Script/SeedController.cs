@@ -25,7 +25,8 @@ public class SeedController : MonoBehaviour
         {
             //箸の先に加速度取得用の空のオブジェクトを設置する
             //箸の先からぶつかった位置が遠くなるほど、箸本来の移動速度に柄づいていく
-            force = (transform.position - point.point).normalized * 10f;
+            force = (transform.position - point.point).normalized
+                * collision.gameObject.GetComponent<CSChildController>().speed.magnitude;
         }
         // 力を加える
         //ForceMode.VelocityChange:質量を無視して一回だけ力を加える
