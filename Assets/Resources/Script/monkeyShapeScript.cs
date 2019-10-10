@@ -8,9 +8,9 @@ public class monkeyShapeScript : MonoBehaviour
 
     public SkinnedMeshRenderer faceMotion;
 
-    [SerializeField, Range(0, 1000)]
+    [SerializeField, Range(0, 100)]
     //変形度合い（0.0 ～ 100.0）
-    private int key_Q, key_W, key_E, key_R, key_T, key_Y, key_U, key_I, key_O, key_P,
+    public int key_Q, key_W, key_E, key_R, key_T, key_Y, key_U, key_I, key_O, key_P,
                 key_A, key_S, key_D, key_F, key_G, key_H, key_J, key_K, key_L,
                 key_Z, key_X, key_C, key_V, key_B, key_N, key_M;
 
