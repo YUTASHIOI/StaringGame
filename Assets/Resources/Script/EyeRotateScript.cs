@@ -10,12 +10,16 @@ public class EyeRotateScript : MonoBehaviour
     int ROTATE_STV_V = 40;
 
     [SerializeField]
-    GameObject Eye_R, Eye_L;
+    GameObject pEye_R, pEye_L;
+
+    GameObject Eye_R;
+    GameObject Eye_L;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Eye_R = Instantiate(pEye_R) as GameObject;
+        Eye_L = Instantiate(pEye_L) as GameObject;
     }
 
     // Update is called once per frame

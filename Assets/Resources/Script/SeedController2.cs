@@ -64,8 +64,6 @@ public class SeedController2 : MonoBehaviour
             side1 = Center_Pos - this.transform.position;
             side2 = new Vector3(this.transform.position.x, this.transform.position.y, 0.0f) - this.transform.position;
             Vector3 initVelocity = Vector3.Cross(side1, side2).normalized * initVelocityY;
-            Debug.Log("1:" + side1);
-            Debug.Log("2:" + side2);
             GetComponent<Rigidbody>().velocity = initVelocity;
             Debug.Log("Y:" + initVelocity);
             //GetComponent<Rigidbody>().velocity = new Vector3(initVelocityY / 2f, -initVelocityY / 2f, 0f); ;
