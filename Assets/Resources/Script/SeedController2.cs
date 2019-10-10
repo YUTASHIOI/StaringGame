@@ -57,7 +57,7 @@ public class SeedController2 : MonoBehaviour
 
     void FixedUpdate()
     {
-            //Debug.Log("Y:"+initVelocity.y);
+        //Debug.Log("Y:"+initVelocity.y);
         if (GetComponent<Transform>().position.y < -2.7f && gravitySwitch == false)
         {
             gravitySwitch = true;
@@ -71,7 +71,7 @@ public class SeedController2 : MonoBehaviour
             //GetComponent<Rigidbody>().velocity = new Vector3(initVelocityY / 2f, -initVelocityY / 2f, 0f); ;
         }
         if (gravitySwitch)
-        { 
+        {
             //惑星から太陽に向かうベクトルを計算
             Vector3 direction = sun.transform.position - GetComponent<Transform>().position;
             //太陽と惑星の距離rを計算

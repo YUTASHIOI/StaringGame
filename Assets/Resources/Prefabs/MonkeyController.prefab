@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6826218330469973751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6826218330469973749}
+  - component: {fileID: 6826218330469973750}
+  m_Layer: 0
+  m_Name: MonkeyController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6826218330469973749
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6826218330469973751}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6826218330469973750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6826218330469973751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e391cc4a8e4787b4791947523343a1ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faceMotion: {fileID: 3861472432101758409, guid: 69d1290801d5f9046a959fbccb14b6ac,
+    type: 3}
+  key_Q: 0
+  key_W: 0
+  key_E: 0
+  key_R: 0
+  key_T: 0
+  key_Y: 0
+  key_U: 0
+  key_I: 0
+  key_O: 0
+  key_P: 0
+  key_A: 0
+  key_S: 0
+  key_D: 0
+  key_F: 0
+  key_G: 0
+  key_H: 0
+  key_J: 0
+  key_K: 0
+  key_L: 0
+  key_Z: 0
+  key_X: 0
+  key_C: 0
+  key_V: 0
+  key_B: 0
+  key_N: 0
+  key_M: 0
+  transSpeed: 4
+  pMonkey: {fileID: 3339749472843824879, guid: 69d1290801d5f9046a959fbccb14b6ac, type: 3}
+  key_Q_Switch: 0
+  key_W_Switch: 0
+  key_E_Switch: 0
+  key_R_Switch: 0
+  key_T_Switch: 0
+  key_Y_Switch: 0
+  key_U_Switch: 0
+  key_I_Switch: 0
