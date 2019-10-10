@@ -4,11 +4,45 @@ using UnityEngine;
 
 public class SeedController : MonoBehaviour
 {
+
     [SerializeField]
     GameObject chopsticks;
 
     private bool on_right = false;
     private bool on_left = false;
+
+    private bool particle_flag = false;
+
+
+    private IEnumerator SeedExplosion()
+    {
+        this.GetComponent<MeshRenderer>().enabled = false;
+        this.GetComponent<SphereCollider>().enabled = false;
+        this.transform.GetComponentInChildren<ParticleSystem>().Play();
+        yield return new WaitForSeconds(transform.GetComponentInChildren<ParticleSystem>().main.duration);
+        //非表示
+        this.gameObject.SetActive(false);
+    }
+
+
+    /*------------------------------------------------------------------*
+     * ◆箸がモノに触れている間中
+     *------------------------------------------------------------------*/
+    void OnCollisionStay(Collision collision)
+    {
+        if (!particle_flag)
+        {
+            foreach (ContactPoint point in collision.contacts)
+            {
+                if ((transform.position - point.point).magnitude <= 0.3f)
+                {
+                    particle_flag = true;
+                    StartCoroutine("SeedExplosion");
+                }
+            }
+        }
+    }
+
 
     /*------------------------------------------------------------------*
      * ◆箸がモノに触れたとき
@@ -61,6 +95,8 @@ public class SeedController : MonoBehaviour
         //箸に触れているかどうかの判定
         on_right = false;
         on_left = false;
+        //種をつぶす
+        particle_flag = false; 
     }
     // Start is called before the first frame update
     void Start()
