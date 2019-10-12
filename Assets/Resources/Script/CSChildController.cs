@@ -8,7 +8,9 @@ public class CSChildController : MonoBehaviour
     ChopsticsController ChopsticksController;
     public bool on_trigger;         //モノに触れたかどうか
     public bool on_collision;       //モノに触れたかどうか
-    public Vector3 speed;           //箸の移動量
+    public float speed;           //箸の移動量
+    [SerializeField, TooltipAttribute("種とぶつかったときの音")]
+    AudioClip se_hit_seed;
 
     private Vector3 local_pos;      //箸オブジェクトの位置
     private Vector3 pre_world_pos;  //ひとつ前のふれーむの座標
@@ -33,7 +35,12 @@ public class CSChildController : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         on_collision = true;
-        //Init();
+        
+        if (collision.gameObject.tag == "seed")
+        {
+            //SE再生
+            this.GetComponent<AudioSource>().PlayOneShot(se_hit_seed);
+        }
     }
     /*------------------------------------------------------------------*
      * ◆箸がモノから離れたとき
@@ -91,7 +98,7 @@ public class CSChildController : MonoBehaviour
         InitPosRot();
 
         //箸の移動量を計算
-        speed　= ((this.transform.position - pre_world_pos) / Time.deltaTime);
+        speed　= ((this.transform.position - pre_world_pos) / Time.deltaTime).magnitude;
 
         //Debug.Log(speed.magnitude);
 
