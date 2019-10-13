@@ -10,11 +10,11 @@ public class SeedController : MonoBehaviour
     [SerializeField, TooltipAttribute("種が破裂したときの音")]
     AudioClip se_explosion;
 
+
     private bool on_right = false;
     private bool on_left = false;
-
     private bool particle_flag = false;
-
+    private Vector3 pre_velocity;                  //箸の移動量
 
     /*------------------------------------------------------------------*
      * ◆種が割れる処理
@@ -50,7 +50,7 @@ public class SeedController : MonoBehaviour
         Vector3 force = Vector3.zero;
         foreach (ContactPoint point in collision.contacts)
         {
-            force = GetComponent<Rigidbody>().velocity;
+            force = -pre_velocity;
             //箸の先に加速度取得用の空のオブジェクトを設置する
             //箸の先からぶつかった位置が遠くなるほど、箸本来の移動速度に柄づいていく
             force += (transform.position - point.point).normalized
@@ -109,7 +109,9 @@ public class SeedController : MonoBehaviour
         on_right = false;
         on_left = false;
         //種をつぶす
-        particle_flag = false; 
+        particle_flag = false;
+        //種の移動量
+        pre_velocity = Vector3.zero;
     }
     // Start is called before the first frame update
     void Start()
@@ -120,6 +122,7 @@ public class SeedController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        pre_velocity = GetComponent<Rigidbody>().velocity;
         Debug.Log(GetComponent<Rigidbody>().velocity);
     }
 }
