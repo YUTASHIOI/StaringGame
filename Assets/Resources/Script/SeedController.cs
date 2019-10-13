@@ -73,7 +73,7 @@ public class SeedController : MonoBehaviour
      *------------------------------------------------------------------*/
     void OnCollisionStay(Collision collision)
     {
-        //
+        //種爆発処理
         if (!particle_flag)
         {
             foreach (ContactPoint point in collision.contacts)
@@ -123,6 +123,6 @@ public class SeedController : MonoBehaviour
     void Update()
     {
         pre_velocity = GetComponent<Rigidbody>().velocity;
-        Debug.Log(GetComponent<Rigidbody>().velocity);
+        //Debug.Log(GetComponent<Rigidbody>().velocity);
     }
 }
