@@ -107,7 +107,6 @@ public class ChopsticsController : MonoBehaviour
     /*******************************************************************
     // Update is called once per frame
      *******************************************************************/
-    // Update is called once per frame
     void Update()
     {
         switch(GameDirector.Game_Scene_T)

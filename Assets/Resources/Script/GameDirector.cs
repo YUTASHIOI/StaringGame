@@ -58,6 +58,8 @@ public class GameDirector : MonoBehaviour
                     device_num++;
                     //プレイヤーの生成
                     Instantiate(player);
+                    //IDの入力
+                    player.GetComponent<PlayerController>().playerID = "P" + (i+1).ToString() +"_";
                 }
             }
         }
