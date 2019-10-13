@@ -19,13 +19,12 @@ public class FaceShapeScript : MonoBehaviour
     private int transSpeed;
 
     [SerializeField]
-    private GameObject pFace;
+    private GameObject Face;
 
     // Start is called before the first frame update
     void Start()
     {
-        GameObject gFace = Instantiate(pFace) as GameObject;
-        faceMotion = gFace.GetComponent<SkinnedMeshRenderer>();
+        faceMotion = Face.GetComponent<SkinnedMeshRenderer>();
     }
 
     void Update()
