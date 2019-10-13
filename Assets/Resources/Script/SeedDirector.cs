@@ -21,8 +21,6 @@ public class SeedDirector : MonoBehaviour
     {
         if (Input.GetKeyDown("a"))
         {
-            Eye_R = GameObject.Find("EYE_R(Clone)");
-            Eye_L = GameObject.Find("EYE_L(Clone)");
             InstanceSeed();
         }
     }
