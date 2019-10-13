@@ -205,9 +205,6 @@ public class FaceShapeScript : MonoBehaviour
         {
             key_T = RatioDown(key_T);
         }
-
-        Debug.Log(Input.GetAxis("十字キー上下"));
-
         key_Q = (int)(Input.GetAxis("L2（アナログ）") * 50.0f) + 50;
         key_W = (int)(Input.GetAxis("R2（アナログ）") * 50.0f) + 50;
     }
