@@ -14,12 +14,12 @@ public class GameDirector : MonoBehaviour
         POST_GAME,  //ゲーム終了後最初の1F
     }
     //---------------------------------------------インスペクタービュー
-    [SerializeField, TooltipAttribute("16:9の場合")]
-    public float aspect = 1.777777f;
     [SerializeField, TooltipAttribute("ゲームの進行状況を管理する")]
     public GAME_STATE_TYPE Game_Scene_T;
     [SerializeField, TooltipAttribute("デバイス接続数")]
     public int device_num;
+    [SerializeField, TooltipAttribute("16:9の場合")]
+    public float aspect = 1.777777f;
 
     [SerializeField, TooltipAttribute("プレイヤーPrefab")]
     private GameObject player;
@@ -91,6 +91,26 @@ public class GameDirector : MonoBehaviour
      *****************************************************************/
     void Update()
     {
-        
+        //GAME_STATE_TYPEの更新
+        switch (Game_Scene_T)
+        {
+            case GameDirector.GAME_STATE_TYPE.PREPARATE:
+                //全ての事前準備が終わったら
+                if (device_flag)
+                {
+                    Game_Scene_T = GAME_STATE_TYPE.PRE_GAME;
+                }
+                break;
+            case GameDirector.GAME_STATE_TYPE.PRE_GAME:
+                //ゲーム開始直前の1Fだけ
+                Game_Scene_T = GAME_STATE_TYPE.GAME;
+                break;
+            case GameDirector.GAME_STATE_TYPE.GAME:
+                break;
+            case GameDirector.GAME_STATE_TYPE.POST_GAME:
+                break;
+            default:
+                break;
+        }
     }
 }
