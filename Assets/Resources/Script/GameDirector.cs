@@ -8,8 +8,10 @@ public class GameDirector : MonoBehaviour
     //-------------------------------------------------ゲームの状態遷移
     public enum GAME_STATE_TYPE
     {
-        PINCH_POLLEN,
-        PUT_IN_NOSE,
+        PREPARATE,  //ゲーム前
+        PRE_GAME,   //ゲーム開始最初の1F
+        GAME,       //ゲーム終了
+        POST_GAME,  //ゲーム終了後最初の1F
     }
     //---------------------------------------------インスペクタービュー
     [SerializeField, TooltipAttribute("16:9の場合")]
@@ -21,6 +23,8 @@ public class GameDirector : MonoBehaviour
 
     [SerializeField, TooltipAttribute("プレイヤーPrefab")]
     private GameObject player;
+
+    private bool device_flag;       //デバイスの認識が完了したかどうか
 
     /*------------------------------------------------------------------*
      * ◆Playerの生成＆デバイス認識
@@ -56,8 +60,9 @@ public class GameDirector : MonoBehaviour
                     Instantiate(player);
                 }
             }
-            Debug.Log("接続デバイス数：" + device_num + "\n----接続完了----");
         }
+        Debug.Log("接続デバイス数：" + device_num + "\n----接続完了----");
+        device_flag = true;
     }
 
     /*****************************************************************
@@ -66,7 +71,9 @@ public class GameDirector : MonoBehaviour
     void Awake()
     {
         //ゲームの状態を管理する
-        Game_Scene_T = GAME_STATE_TYPE.PINCH_POLLEN;
+        Game_Scene_T = GAME_STATE_TYPE.PREPARATE;
+        //デバイスの認識が完了したかどうか
+        device_flag = false;
 
         //接続されているデバイスを取得
         StartCoroutine("CreatePlayer");
