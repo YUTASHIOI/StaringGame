@@ -13,7 +13,7 @@ public class SeedDirector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InstanceSeed();
+
     }
 
     // Update is called once per frame
