@@ -4,23 +4,83 @@ using UnityEngine;
 
 public class GameDirector : MonoBehaviour
 {
-    //ゲームの状態遷移
+
+    //-------------------------------------------------ゲームの状態遷移
     public enum GAME_STATE_TYPE
     {
-        PINCH_POLLEN,
-        PUT_IN_NOSE,
+        PREPARATE,  //ゲーム前
+        PRE_GAME,   //ゲーム開始最初の1F
+        GAME,       //ゲーム終了
+        POST_GAME,  //ゲーム終了後最初の1F
     }
+    //---------------------------------------------インスペクタービュー
+    [SerializeField, TooltipAttribute("16:9の場合")]
+    public float aspect = 1.777777f;
     [SerializeField, TooltipAttribute("ゲームの進行状況を管理する")]
     public GAME_STATE_TYPE Game_Scene_T;
+    [SerializeField, TooltipAttribute("デバイス接続数")]
+    public int device_num;
+
+    [SerializeField, TooltipAttribute("プレイヤーPrefab")]
+    private GameObject player;
+
+    private bool device_flag;       //デバイスの認識が完了したかどうか
+
+    /*------------------------------------------------------------------*
+     * ◆Playerの生成＆デバイス認識
+     *------------------------------------------------------------------*/
+    private IEnumerator CreatePlayer()
+    {
+        //デバイス数のリセット
+        device_num = 0;
+
+        //詠み込みまでの待ち時間
+        yield return new WaitForSeconds(0.1f);
+
+        var controllerNames = Input.GetJoystickNames();
+
+        //認識できるデバイス
+        Debug.Log("----接続開始----");
+        if (controllerNames[0] == "")
+        {
+            //【注意】デバイス接続できているのに、なぜか０になることがある
+            Debug.Log("Error:デバイスが接続されていません");
+        }
+        else
+        {
+            Debug.Log("接続検知数：" + controllerNames.Length);
+            for (int i = 0; controllerNames.Length > i; i++)
+            {
+                if(controllerNames[i] != "")
+                {
+                    Debug.Log("デバイス[" + i + "]：" + controllerNames[i]);
+                    //デバイス数の更新
+                    device_num++;
+                    //プレイヤーの生成
+                    Instantiate(player);
+                }
+            }
+        }
+        Debug.Log("接続デバイス数：" + device_num + "\n----接続完了----");
+        device_flag = true;
+    }
 
     /*****************************************************************
      * Awake
      *****************************************************************/
     void Awake()
     {
-        Game_Scene_T = GAME_STATE_TYPE.PINCH_POLLEN;
+        //ゲームの状態を管理する
+        Game_Scene_T = GAME_STATE_TYPE.PREPARATE;
+        //デバイスの認識が完了したかどうか
+        device_flag = false;
+
+        //接続されているデバイスを取得
+        StartCoroutine("CreatePlayer");
+               
     }
-    /*****************************************************************
+    /*******************************************************
+     * **********
     // Start is called before the first frame update
      *****************************************************************/
     void Start()

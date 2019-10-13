@@ -486,7 +486,7 @@ MonoBehaviour:
   ChopsticksController: {fileID: 1196118671}
   on_trigger: 0
   on_collision: 0
-  speed: {x: 0, y: 0, z: 0}
+  speed: 0
   se_hit_seed: {fileID: 8300000, guid: b824d5d60c239da47b25155ea77e43c4, type: 3}
 --- !u!82 &164403881
 AudioSource:
@@ -1065,7 +1065,7 @@ MonoBehaviour:
   ChopsticksController: {fileID: 1196118671}
   on_trigger: 0
   on_collision: 0
-  speed: {x: 0, y: 0, z: 0}
+  speed: 0
   se_hit_seed: {fileID: 8300000, guid: b824d5d60c239da47b25155ea77e43c4, type: 3}
 --- !u!82 &1121968232
 AudioSource:
@@ -1749,6 +1749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Game_Scene_T: 0
+  player: {fileID: 5381430756153093158, guid: 6ba82824f40f9b3459ebb7c1bbd5116f, type: 3}
 --- !u!1 &1661818975
 GameObject:
   m_ObjectHideFlags: 0

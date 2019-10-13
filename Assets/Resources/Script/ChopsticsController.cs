@@ -112,10 +112,10 @@ public class ChopsticsController : MonoBehaviour
     {
         switch(GameDirector.Game_Scene_T)
         {
-            case GameDirector.GAME_STATE_TYPE.PINCH_POLLEN:
+            case GameDirector.GAME_STATE_TYPE.PREPARATE:
                 UpdatePinchPollen();
                 break;
-            case GameDirector.GAME_STATE_TYPE.PUT_IN_NOSE:
+            case GameDirector.GAME_STATE_TYPE.PRE_GAME:
                 break;
             default:
                 break;
