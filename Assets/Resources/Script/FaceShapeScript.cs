@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class monkeyShapeScript : MonoBehaviour
+public class FaceShapeScript : MonoBehaviour
 {
 
 
@@ -19,22 +19,17 @@ public class monkeyShapeScript : MonoBehaviour
     private int transSpeed;
 
     [SerializeField]
-    private GameObject pMonkey;
-
-    [SerializeField]
-    private bool key_Q_Switch, key_W_Switch, key_E_Switch, key_R_Switch, key_T_Switch, key_Y_Switch, key_U_Switch, key_I_Switch;
+    private GameObject pFace;
 
     // Start is called before the first frame update
     void Start()
     {
-        GameObject gMonkey = Instantiate(pMonkey) as GameObject;
-        faceMotion = gMonkey.GetComponent<SkinnedMeshRenderer>();
+        GameObject gFace = Instantiate(pFace) as GameObject;
+        faceMotion = gFace.GetComponent<SkinnedMeshRenderer>();
     }
 
     void Update()
     {
-        //KeyInput();
-        //KeyInputSwitch();
         JoypadInputSwitch();
         ShapeChange();
     }
@@ -42,21 +37,21 @@ public class monkeyShapeScript : MonoBehaviour
     void ShapeChange()
     {
         faceMotion.SetBlendShapeWeight( 0, (float)key_Q);          //右目閉じる
-        faceMotion.SetBlendShapeWeight( 1, (float)key_W);
-        faceMotion.SetBlendShapeWeight( 2, (float)key_E);
-        faceMotion.SetBlendShapeWeight( 3, (float)key_R);
-        faceMotion.SetBlendShapeWeight( 4, (float)key_T);
-        faceMotion.SetBlendShapeWeight( 5, (float)key_Y);
-        faceMotion.SetBlendShapeWeight( 6, (float)key_U);
-        faceMotion.SetBlendShapeWeight( 7, (float)key_I);
-        faceMotion.SetBlendShapeWeight( 8, (float)key_O);
-        faceMotion.SetBlendShapeWeight( 9, (float)key_P);
-        faceMotion.SetBlendShapeWeight(10, (float)key_A);
-        faceMotion.SetBlendShapeWeight(11, (float)key_S);
-        faceMotion.SetBlendShapeWeight(12, (float)key_D);
-        faceMotion.SetBlendShapeWeight(13, (float)key_F);
-        faceMotion.SetBlendShapeWeight(14, (float)key_G);
-        faceMotion.SetBlendShapeWeight(15, (float)key_H);
+        faceMotion.SetBlendShapeWeight( 1, (float)key_W);          //左目閉じる
+        faceMotion.SetBlendShapeWeight( 2, (float)key_E);          //右眉上げる
+        faceMotion.SetBlendShapeWeight( 3, (float)key_R);          //左眉上げる
+        faceMotion.SetBlendShapeWeight( 4, (float)key_T);          //右口角上げる
+        faceMotion.SetBlendShapeWeight( 5, (float)key_Y);          //左口角上げる
+        faceMotion.SetBlendShapeWeight( 6, (float)key_U);          //右口角下げる
+        faceMotion.SetBlendShapeWeight( 7, (float)key_I);          //左口角下げる
+        faceMotion.SetBlendShapeWeight( 8, (float)key_O);          //右眉困り顔
+        faceMotion.SetBlendShapeWeight( 9, (float)key_P);          //左眉困り顔
+        faceMotion.SetBlendShapeWeight(10, (float)key_A);          //右眉怒り顔
+        faceMotion.SetBlendShapeWeight(11, (float)key_S);          //左眉怒り顔
+        faceMotion.SetBlendShapeWeight(12, (float)key_D);          //右目大開き
+        faceMotion.SetBlendShapeWeight(13, (float)key_F);          //左目大開き
+        faceMotion.SetBlendShapeWeight(14, (float)key_G);          //鼻開く
+        faceMotion.SetBlendShapeWeight(15, (float)key_H);          //口尖らす
         //faceMotion.SetBlendShapeWeight(16, (float)key_J);
         //faceMotion.SetBlendShapeWeight(17, key_K);
         //faceMotion.SetBlendShapeWeight(18, key_L);
@@ -72,168 +67,19 @@ public class monkeyShapeScript : MonoBehaviour
 
 
     //押し放し＝増減
-    void KeyInput()
-    {
-        //Qキー
-        if (Input.GetKey(KeyCode.Q))
-        {
-            key_Q = RatioUp(key_Q);
-        }
-        else
-        {
-            key_Q = RatioDown(key_Q);
-        }
-
-        //Wキー
-        if (Input.GetKey(KeyCode.W))
-        {
-            key_W = RatioUp(key_W);
-        }
-        else
-        {
-            key_W = RatioDown(key_W);
-        }
-
-        //Eキー
-        if (Input.GetKey(KeyCode.E))
-        {
-            key_E = RatioUp(key_E);
-        }
-        else
-        {
-            key_E = RatioDown(key_E);
-        }
-
-        //Rキー
-        if (Input.GetKey(KeyCode.R))
-        {
-            key_R = RatioUp(key_R);
-        }
-        else
-        {
-            key_R = RatioDown(key_R);
-        }
-
-        //Tキー
-        if (Input.GetKey(KeyCode.T))
-        {
-            key_T = RatioUp(key_T);
-        }
-        else
-        {
-            key_T = RatioDown(key_T);
-        }
-
-        //Yキー
-        if (Input.GetKey(KeyCode.Y))
-        {
-            key_Y = RatioUp(key_Y);
-        }
-        else
-        {
-            key_Y = RatioDown(key_Y);
-        }
-
-        //Uキー
-        if (Input.GetKey(KeyCode.U))
-        {
-            key_U = RatioUp(key_U);
-        }
-        else
-        {
-            key_U = RatioDown(key_U);
-        }
-
-        //Iキー
-        if (Input.GetKey(KeyCode.I))
-        {
-            key_I = RatioUp(key_I);
-        }
-        else
-        {
-            key_I = RatioDown(key_I);
-        }
-
-        //Oキー
-        if (Input.GetKey(KeyCode.O))
-        {
-            key_O = RatioUp(key_O);
-        }
-        else
-        {
-            key_O = RatioDown(key_O);
-        }
-
-        //Pキー
-        if (Input.GetKey(KeyCode.P))
-        {
-            key_P = RatioUp(key_P);
-        }
-        else
-        {
-            key_P = RatioDown(key_P);
-        }
-
-        //Aキー
-        if (Input.GetKey(KeyCode.A))
-        {
-            key_A = RatioUp(key_A);
-        }
-        else
-        {
-            key_A = RatioDown(key_A);
-        }
-    }
-
     //ジョイパッドで操作
     void JoypadInputSwitch()
     {
         if (Input.GetButton("〇ボタン"))
         {
-            key_U = RatioUp(key_U);
-        }
-        else
-        {
-            key_U = RatioDown(key_U);
-        }
-        
-        if (Input.GetButton("×ボタン"))
-        {
             key_I = RatioUp(key_I);
         }
         else
         {
             key_I = RatioDown(key_I);
         }
-
-        if (Input.GetButton("△ボタン"))
-        {
-            key_E = RatioUp(key_E);
-        }
-        else
-        {
-            key_E = RatioDown(key_E);
-        }
-
-        if (Input.GetButton("□ボタン"))
-        {
-            key_R = RatioUp(key_R);
-        }
-        else
-        {
-            key_R = RatioDown(key_R);
-        }
-
-        if (Input.GetButton("L1ボタン"))
-        {
-            key_T = RatioUp(key_T);
-        }
-        else
-        {
-            key_T = RatioDown(key_T);
-        }
-
-        if (Input.GetButton("R1ボタン"))
+        
+        if (Input.GetButton("×ボタン"))
         {
             key_Y = RatioUp(key_Y);
         }
@@ -242,40 +88,76 @@ public class monkeyShapeScript : MonoBehaviour
             key_Y = RatioDown(key_Y);
         }
 
-        if (Input.GetButton("Shareボタン"))
-        {
-            key_O = RatioUp(key_O);
-        }
-        else
-        {
-            key_O = RatioDown(key_O);
-        }
-
-        if (Input.GetButton("Option"))
-        {
-            key_P = RatioUp(key_P);
-        }
-        else
-        {
-            key_P = RatioDown(key_P);
-        }
-
-        if (Input.GetButton("PSボタン"))
-        {
-            key_A = RatioUp(key_A);
-        }
-        else
-        {
-            key_A = RatioDown(key_A);
-        }
-
-        if (Input.GetButton("トラックパッド押し込み"))
+        if (Input.GetButton("△ボタン"))
         {
             key_S = RatioUp(key_S);
         }
         else
         {
             key_S = RatioDown(key_S);
+        }
+
+        if (Input.GetButton("□ボタン"))
+        {
+            key_P = RatioUp(key_P);
+        }
+        else
+        {
+            key_P = RatioDown(key_P);
+        }
+
+        if (Input.GetButton("L1ボタン"))
+        {
+            key_E = RatioUp(key_E);
+        }
+        else
+        {
+            key_E = RatioDown(key_E);
+        }
+
+        if (Input.GetButton("R1ボタン"))
+        {
+            key_R = RatioUp(key_R);
+        }
+        else
+        {
+            key_R = RatioDown(key_R);
+        }
+
+        if (Input.GetButton("Shareボタン"))
+        {
+            key_D = RatioUp(key_D);
+        }
+        else
+        {
+            key_D = RatioDown(key_D);
+        }
+
+        if (Input.GetButton("Option"))
+        {
+            key_F = RatioUp(key_F);
+        }
+        else
+        {
+            key_F = RatioDown(key_F);
+        }
+
+        if (Input.GetButton("PSボタン"))
+        {
+            key_G = RatioUp(key_G);
+        }
+        else
+        {
+            key_G = RatioDown(key_G);
+        }
+
+        if (Input.GetButton("トラックパッド押し込み"))
+        {
+            key_H = RatioUp(key_H);
+        }
+        else
+        {
+            key_H = RatioDown(key_H);
         }
         //if (Input.GetButton("L2（デジタル）"))
         //{
@@ -291,38 +173,38 @@ public class monkeyShapeScript : MonoBehaviour
 
         if (Input.GetAxis("十字キー左右") >= 0.5)
         {
-            key_D = RatioUp(key_D);
+            key_O = RatioUp(key_O);
         }
         else
         {
-            key_D = RatioDown(key_D);
+            key_O = RatioDown(key_O);
         }
 
         if (Input.GetAxis("十字キー左右") <= -0.5)
         {
-            key_F = RatioUp(key_F);
+            key_U = RatioUp(key_U);
         }
         else
         {
-            key_F = RatioDown(key_F);
+            key_U = RatioDown(key_U);
         }
 
         if (Input.GetAxis("十字キー上下") >= 0.5)
         {
-            key_G = RatioUp(key_G);
+            key_A = RatioUp(key_A);
         }
         else
         {
-            key_G = RatioDown(key_G);
+            key_A = RatioDown(key_A);
         }
 
         if (Input.GetAxis("十字キー上下") <= -0.5)
         {
-            key_H = RatioUp(key_H);
+            key_T = RatioUp(key_T);
         }
         else
         {
-            key_H = RatioDown(key_H);
+            key_T = RatioDown(key_T);
         }
 
         Debug.Log(Input.GetAxis("十字キー上下"));
