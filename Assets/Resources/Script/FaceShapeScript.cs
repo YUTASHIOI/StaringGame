@@ -10,8 +10,8 @@ public class FaceShapeScript : MonoBehaviour
 
     [SerializeField, Range(0, 100)]
     //変形度合い（0.0 ～ 100.0）
-    public int key_Q, key_W, key_E, key_R, key_T, key_Y, key_U, key_I, key_O, key_P,
-                key_A, key_S, key_D, key_F, key_G, key_H, key_J, key_K, key_L,
+    public int button_L2, button_R2, button_L1, button_R1, button_Cursor_Down, button_Cross, button_Cursor_Left, button_Cirle, button_Cursor_Right, button_Square,
+                button_Cursor_Up, button_Triangle, button_Share, button_Option, button_PS, button_TrackPad, key_J, key_K, key_L,
                 key_Z, key_X, key_C, key_V, key_B, key_N, key_M;
 
     [SerializeField, Range(0, 100)]
@@ -35,22 +35,22 @@ public class FaceShapeScript : MonoBehaviour
 
     void ShapeChange()
     {
-        faceMotion.SetBlendShapeWeight( 0, (float)key_Q);          //右目閉じる
-        faceMotion.SetBlendShapeWeight( 1, (float)key_W);          //左目閉じる
-        faceMotion.SetBlendShapeWeight( 2, (float)key_E);          //右眉上げる
-        faceMotion.SetBlendShapeWeight( 3, (float)key_R);          //左眉上げる
-        faceMotion.SetBlendShapeWeight( 4, (float)key_T);          //右口角上げる
-        faceMotion.SetBlendShapeWeight( 5, (float)key_Y);          //左口角上げる
-        faceMotion.SetBlendShapeWeight( 6, (float)key_U);          //右口角下げる
-        faceMotion.SetBlendShapeWeight( 7, (float)key_I);          //左口角下げる
-        faceMotion.SetBlendShapeWeight( 8, (float)key_O);          //右眉困り顔
-        faceMotion.SetBlendShapeWeight( 9, (float)key_P);          //左眉困り顔
-        faceMotion.SetBlendShapeWeight(10, (float)key_A);          //右眉怒り顔
-        faceMotion.SetBlendShapeWeight(11, (float)key_S);          //左眉怒り顔
-        faceMotion.SetBlendShapeWeight(12, (float)key_D);          //右目大開き
-        faceMotion.SetBlendShapeWeight(13, (float)key_F);          //左目大開き
-        faceMotion.SetBlendShapeWeight(14, (float)key_G);          //鼻開く
-        faceMotion.SetBlendShapeWeight(15, (float)key_H);          //口尖らす
+        faceMotion.SetBlendShapeWeight( 0, (float)button_L2);          //右目閉じる
+        faceMotion.SetBlendShapeWeight( 1, (float)button_R2);          //左目閉じる
+        faceMotion.SetBlendShapeWeight( 2, (float)button_L1);          //右眉上げる
+        faceMotion.SetBlendShapeWeight( 3, (float)button_R1);          //左眉上げる
+        faceMotion.SetBlendShapeWeight( 4, (float)button_Cursor_Down);          //右口角上げる
+        faceMotion.SetBlendShapeWeight( 5, (float)button_Cross);          //左口角上げる
+        faceMotion.SetBlendShapeWeight( 6, (float)button_Cursor_Left);          //右口角下げる
+        faceMotion.SetBlendShapeWeight( 7, (float)button_Cirle);          //左口角下げる
+        faceMotion.SetBlendShapeWeight( 8, (float)button_Cursor_Right);          //右眉困り顔
+        faceMotion.SetBlendShapeWeight( 9, (float)button_Square);          //左眉困り顔
+        faceMotion.SetBlendShapeWeight(10, (float)button_Cursor_Up);          //右眉怒り顔
+        faceMotion.SetBlendShapeWeight(11, (float)button_Triangle);          //左眉怒り顔
+        faceMotion.SetBlendShapeWeight(12, (float)button_Share);          //右目大開き
+        faceMotion.SetBlendShapeWeight(13, (float)button_Option);          //左目大開き
+        faceMotion.SetBlendShapeWeight(14, (float)button_PS);          //鼻開く
+        faceMotion.SetBlendShapeWeight(15, (float)button_TrackPad);          //口尖らす
         //faceMotion.SetBlendShapeWeight(16, (float)key_J);
         //faceMotion.SetBlendShapeWeight(17, key_K);
         //faceMotion.SetBlendShapeWeight(18, key_L);
@@ -71,92 +71,92 @@ public class FaceShapeScript : MonoBehaviour
     {
         if (Input.GetButton("〇ボタン"))
         {
-            key_I = RatioUp(key_I);
+            button_Cirle = RatioUp(button_Cirle);
         }
         else
         {
-            key_I = RatioDown(key_I);
+            button_Cirle = RatioDown(button_Cirle);
         }
         
         if (Input.GetButton("×ボタン"))
         {
-            key_Y = RatioUp(key_Y);
+            button_Cross = RatioUp(button_Cross);
         }
         else
         {
-            key_Y = RatioDown(key_Y);
+            button_Cross = RatioDown(button_Cross);
         }
 
         if (Input.GetButton("△ボタン"))
         {
-            key_S = RatioUp(key_S);
+            button_Triangle = RatioUp(button_Triangle);
         }
         else
         {
-            key_S = RatioDown(key_S);
+            button_Triangle = RatioDown(button_Triangle);
         }
 
         if (Input.GetButton("□ボタン"))
         {
-            key_P = RatioUp(key_P);
+            button_Square = RatioUp(button_Square);
         }
         else
         {
-            key_P = RatioDown(key_P);
+            button_Square = RatioDown(button_Square);
         }
 
         if (Input.GetButton("L1ボタン"))
         {
-            key_E = RatioUp(key_E);
+            button_L1 = RatioUp(button_L1);
         }
         else
         {
-            key_E = RatioDown(key_E);
+            button_L1 = RatioDown(button_L1);
         }
 
         if (Input.GetButton("R1ボタン"))
         {
-            key_R = RatioUp(key_R);
+            button_R1 = RatioUp(button_R1);
         }
         else
         {
-            key_R = RatioDown(key_R);
+            button_R1 = RatioDown(button_R1);
         }
 
         if (Input.GetButton("Shareボタン"))
         {
-            key_D = RatioUp(key_D);
+            button_Share = RatioUp(button_Share);
         }
         else
         {
-            key_D = RatioDown(key_D);
+            button_Share = RatioDown(button_Share);
         }
 
         if (Input.GetButton("Option"))
         {
-            key_F = RatioUp(key_F);
+            button_Option = RatioUp(button_Option);
         }
         else
         {
-            key_F = RatioDown(key_F);
+            button_Option = RatioDown(button_Option);
         }
 
         if (Input.GetButton("PSボタン"))
         {
-            key_G = RatioUp(key_G);
+            button_PS = RatioUp(button_PS);
         }
         else
         {
-            key_G = RatioDown(key_G);
+            button_PS = RatioDown(button_PS);
         }
 
         if (Input.GetButton("トラックパッド押し込み"))
         {
-            key_H = RatioUp(key_H);
+            button_TrackPad = RatioUp(button_TrackPad);
         }
         else
         {
-            key_H = RatioDown(key_H);
+            button_TrackPad = RatioDown(button_TrackPad);
         }
         //if (Input.GetButton("L2（デジタル）"))
         //{
@@ -166,47 +166,47 @@ public class FaceShapeScript : MonoBehaviour
         //
         //if (Input.GetButton("R2（デジタル）"))
         //{
-        //    key_I_Switch = UpOrDownSwitch(key_I, key_I_Switch);
-        //    key_I = UpDown(key_I, key_I_Switch);
+        //    button_Cirle_Switch = UpOrDownSwitch(button_Cirle, button_Cirle_Switch);
+        //    button_Cirle = UpDown(button_Cirle, button_Cirle_Switch);
         //}
 
         if (Input.GetAxis("十字キー左右") >= 0.5)
         {
-            key_O = RatioUp(key_O);
+            button_Cursor_Right = RatioUp(button_Cursor_Right);
         }
         else
         {
-            key_O = RatioDown(key_O);
+            button_Cursor_Right = RatioDown(button_Cursor_Right);
         }
 
         if (Input.GetAxis("十字キー左右") <= -0.5)
         {
-            key_U = RatioUp(key_U);
+            button_Cursor_Left = RatioUp(button_Cursor_Left);
         }
         else
         {
-            key_U = RatioDown(key_U);
+            button_Cursor_Left = RatioDown(button_Cursor_Left);
         }
 
         if (Input.GetAxis("十字キー上下") >= 0.5)
         {
-            key_A = RatioUp(key_A);
+            button_Cursor_Up = RatioUp(button_Cursor_Up);
         }
         else
         {
-            key_A = RatioDown(key_A);
+            button_Cursor_Up = RatioDown(button_Cursor_Up);
         }
 
         if (Input.GetAxis("十字キー上下") <= -0.5)
         {
-            key_T = RatioUp(key_T);
+            button_Cursor_Down = RatioUp(button_Cursor_Down);
         }
         else
         {
-            key_T = RatioDown(key_T);
+            button_Cursor_Down = RatioDown(button_Cursor_Down);
         }
-        key_Q = (int)(Input.GetAxis("L2（アナログ）") * 50.0f) + 50;
-        key_W = (int)(Input.GetAxis("R2（アナログ）") * 50.0f) + 50;
+        button_L2 = (int)(Input.GetAxis("L2（アナログ）") * 50.0f) + 50;
+        button_R2 = (int)(Input.GetAxis("R2（アナログ）") * 50.0f) + 50;
     }
 
     int UpDown(int key, bool Switch)
