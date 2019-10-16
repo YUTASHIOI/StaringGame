@@ -6,6 +6,8 @@ public class SeedController2 : MonoBehaviour
 {
     Vector3 down = new Vector3(0.0f, -0.8f, 0.0f);
 
+    private float UNIVERSAL_GRAVITATION = 6.67E-5f;
+
     public GameObject sun;
     public float initVelocityY;
     private float f;    //万有引力
@@ -33,7 +35,7 @@ public class SeedController2 : MonoBehaviour
 
     void FixedUpdate()
     {
-        //Debug.Log("Y:"+initVelocity.y);
+        //最初の力
         if (GetComponent<Transform>().position.y < -2.7f && gravitySwitch == false)
         {
             gravitySwitch = true;
@@ -41,9 +43,9 @@ public class SeedController2 : MonoBehaviour
             side2 = new Vector3(this.transform.position.x, this.transform.position.y, 0.0f) - this.transform.position;
             Vector3 initVelocity = Vector3.Cross(side1, side2).normalized * initVelocityY;
             GetComponent<Rigidbody>().velocity = initVelocity;
-            Debug.Log("Y:" + initVelocity);
-            //GetComponent<Rigidbody>().velocity = new Vector3(initVelocityY / 2f, -initVelocityY / 2f, 0f); ;
         }
+
+        //重力ON
         if (gravitySwitch)
         {
             //惑星から太陽に向かうベクトルを計算
@@ -54,8 +56,32 @@ public class SeedController2 : MonoBehaviour
             direction.Normalize();
             //万有引力を計算
             f = G * m * M / (r * r);
+
+            KeepDistance(r, direction);
+
             //万有引力を与える
             GetComponent<Rigidbody>().AddForce(f * direction, ForceMode.Force);
+        }
+    }
+
+    //一定のルートで周回
+    void KeepDistance(float dis, Vector3 direction)
+    {
+        if (dis < 4.0f)
+        {
+            GetComponent<Rigidbody>().AddForce(-f * (4.0f/dis) * direction, ForceMode.Force);
+            //G = (UNIVERSAL_GRAVITATION / 1000) * dis * 200;
+            Debug.Log("near");
+        }
+        else if(dis > 13.0f)
+        {
+            GetComponent<Rigidbody>().AddForce((dis/13) * f * direction, ForceMode.Force);
+            //G = UNIVERSAL_GRAVITATION * dis/10;
+            Debug.Log("far");
+        }
+        else
+        {
+            G = UNIVERSAL_GRAVITATION;
         }
     }
 }
