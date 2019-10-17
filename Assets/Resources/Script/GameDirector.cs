@@ -58,8 +58,10 @@ public class GameDirector : MonoBehaviour
                     device_num++;
                     //プレイヤーの生成
                     GameObject player_prefab = Instantiate(player) as GameObject;
-                    //IDの入力
+                    //プレハブ名の変更
                     player_prefab.name = "Player" + (i + 1).ToString();
+                    //IDの入力
+                    player_prefab.GetComponent<PlayerController>().GameDirector = GetComponent<GameDirector>();
                     //IDの入力
                     player_prefab.GetComponent<PlayerController>().playerID = "P" + (i+1).ToString() +"_";
                 }
