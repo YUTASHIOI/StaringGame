@@ -4918,7 +4918,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b1e72232d91e3348a8c5364fda335af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chopsticks: {fileID: 0}
   se_explosion: {fileID: 8300000, guid: 69b490c6ab5410f4297f0b675b51a468, type: 3}
 --- !u!54 &7205343072754361451
 Rigidbody:
@@ -4943,7 +4942,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7205343072754361444}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1d880a5b23c1004fbdfb87a6c7cc19d, type: 3}
   m_Name: 
