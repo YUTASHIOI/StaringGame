@@ -15,7 +15,7 @@ public class SeedDirector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameDirector = GameObject.Find("GameDirector").GetComponent<GameDirector>(); ;
+        GameDirector = GameObject.Find("GameDirector").GetComponent<GameDirector>();
     }
 
     // Update is called once per frame

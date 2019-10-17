@@ -16,6 +16,7 @@ public class NoseHoleScript : MonoBehaviour
         
     }
 
+    // 当たったのが豆なら、Destroy して 再 Instance
     private void OnTriggerEnter(Collider other)
     {
         SeedDirector SeedDirector;
@@ -23,7 +24,7 @@ public class NoseHoleScript : MonoBehaviour
         if (other.tag == "seed")
         {
             Destroy(other.gameObject);
-            //SeedDirector.InstanceSeed();
+            SeedDirector.InstanceSeed();
         }
     }
 }

@@ -23,6 +23,7 @@ public class DysonNoseScript : MonoBehaviour
         
     }
 
+    // 豆が当たったら、鼻息に動かされる（吸い込み・吐き出し）
     private void OnTriggerStay(Collider other)
     {
         if(other.tag == "seed")
