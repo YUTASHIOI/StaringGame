@@ -38,12 +38,12 @@ public class CSLeftRootController : MonoBehaviour
      *****************************************************************/
     void Update()
     {
-        if (Input.GetButton("L2（デジタル）"))
+        if (Input.GetButton("CSMove(L_Toggle)"))
         {
             this.transform.localRotation = Quaternion.Euler(
             init_rot_x,
             0f,
-            Z_Range * ((Input.GetAxis("L2（アナログ）") + 1f) / 2f)
+            Z_Range * ((Input.GetAxis("CSMove(L_Rot)") + 1f) / 2f)
             );
         }
         else

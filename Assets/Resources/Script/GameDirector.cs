@@ -57,9 +57,11 @@ public class GameDirector : MonoBehaviour
                     //デバイス数の更新
                     device_num++;
                     //プレイヤーの生成
-                    Instantiate(player);
+                    GameObject player_prefab = Instantiate(player) as GameObject;
                     //IDの入力
-                    player.GetComponent<PlayerController>().playerID = "P" + (i+1).ToString() +"_";
+                    player_prefab.name = "Player" + (i + 1).ToString();
+                    //IDの入力
+                    player_prefab.GetComponent<PlayerController>().playerID = "P" + (i+1).ToString() +"_";
                 }
             }
         }

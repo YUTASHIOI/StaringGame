@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class SeedController : MonoBehaviour
 {
-
-    [SerializeField, TooltipAttribute("種を掴んだ時の親要素の位置として利用")]
-    GameObject chopsticks;
     [SerializeField, TooltipAttribute("種が破裂したときの音")]
     AudioClip se_explosion;
 
@@ -53,6 +50,7 @@ public class SeedController : MonoBehaviour
             force = -pre_velocity;
             //箸の先に加速度取得用の空のオブジェクトを設置する
             //箸の先からぶつかった位置が遠くなるほど、箸本来の移動速度に柄づいていく
+            //【注意】いろいろ怪しそう
             force += (transform.position - point.point).normalized
                 * collision.gameObject.GetComponent<CSChildController>().speed;
         }

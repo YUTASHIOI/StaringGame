@@ -8,6 +8,8 @@ public class ChopsticsController : MonoBehaviour
     GameDirector GameDirector;
     [SerializeField, TooltipAttribute("カメラの描画範囲")]
     CameraController CameraController;
+    [SerializeField, TooltipAttribute("操作するプレイヤーID")]
+    public string playerID;
     [SerializeField, TooltipAttribute("箸モデルの大きさ")]
     public Vector3 chopstick;
     [SerializeField, TooltipAttribute("移動速度")]
@@ -16,8 +18,6 @@ public class ChopsticsController : MonoBehaviour
     float noize;
     [SerializeField, TooltipAttribute("花粉を摘むときの初期位置")]
     private Vector2 pinch_pollen_pos;
-
-
 
 
     private Vector3 tmp_pos;    //移動量の仮置き
@@ -34,15 +34,14 @@ public class ChopsticsController : MonoBehaviour
         tmp_pos.z = CameraController.z;
         this.transform.localPosition = tmp_pos;
         //アナログスティックの値取得
-        tmp_L_stick.x = Input.GetAxis("L_Horizontal");
-        tmp_L_stick.y = Input.GetAxis("L_Vertical");
+        tmp_L_stick.x = Input.GetAxis("CSMove(Horizontal)");
+        tmp_L_stick.y = Input.GetAxis("CSMove(Vertical)");
     }
     /*-----------------------------------------------------------------*
      * ◆花粉を摘む関数
      *-----------------------------------------------------------------*/
     void UpdatePinchPollen()
     {
-        //Debug.Log(Mathf.Abs(Input.GetAxis("L_Horizontal")) +":"+ Mathf.Abs(Input.GetAxis("L_Vertical")));
         /*
          * ◆移動ロジック
          * 
@@ -57,16 +56,16 @@ public class ChopsticsController : MonoBehaviour
          * 
          */
         //Lスティックの移動量がnoize以上だったら,箸を移動させる
-        if (Mathf.Abs(Input.GetAxis("L_Horizontal")) + Mathf.Abs(Input.GetAxis("L_Vertical")) > noize)
+        if (Mathf.Abs(Input.GetAxis("CSMove(Horizontal)")) + Mathf.Abs(Input.GetAxis("CSMove(Vertical)")) > noize)
         {
             // 倒した角度によって移動を加速させたい
             //X軸
-            tmp_pos.x += Mathf.Sin(Input.GetAxis("L_Horizontal") - tmp_L_stick.x) * move_speed;
+            tmp_pos.x += Mathf.Sin(Input.GetAxis("CSMove(Horizontal)") - tmp_L_stick.x) * move_speed;
             if (tmp_pos.x > CameraController.right) tmp_pos.x = CameraController.right;
             else if (tmp_pos.x < CameraController.left) tmp_pos.x = CameraController.left;
 
             //Y軸
-            tmp_pos.y += Mathf.Sin(Input.GetAxis("L_Vertical") - tmp_L_stick.y) * -move_speed;
+            tmp_pos.y += Mathf.Sin(Input.GetAxis("CSMove(Vertical)") - tmp_L_stick.y) * -move_speed;
             if (tmp_pos.y > CameraController.top) tmp_pos.y = CameraController.top;
             else if (tmp_pos.y < CameraController.bottom) tmp_pos.y = CameraController.bottom;
 
@@ -86,8 +85,8 @@ public class ChopsticsController : MonoBehaviour
             //this.transform.localPosition = tmp_pos;
 
             //アナログスティックの値取得
-            tmp_L_stick.x = Input.GetAxis("L_Horizontal");
-            tmp_L_stick.y = Input.GetAxis("L_Vertical");
+            tmp_L_stick.x = Input.GetAxis("CSMove(Horizontal)");
+            tmp_L_stick.y = Input.GetAxis("CSMove(Vertical)");
         }
     }
     /*****************************************************************
@@ -112,9 +111,14 @@ public class ChopsticsController : MonoBehaviour
         switch(GameDirector.Game_Scene_T)
         {
             case GameDirector.GAME_STATE_TYPE.PREPARATE:
-                UpdatePinchPollen();
                 break;
             case GameDirector.GAME_STATE_TYPE.PRE_GAME:
+                InitPinchPollen();
+                break;
+            case GameDirector.GAME_STATE_TYPE.GAME:
+                UpdatePinchPollen();
+                break;
+            case GameDirector.GAME_STATE_TYPE.POST_GAME:
                 break;
             default:
                 break;

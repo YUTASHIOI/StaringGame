@@ -37,12 +37,12 @@ public class CSRightRootController : MonoBehaviour
      *****************************************************************/
     void Update()
     {
-        if (Input.GetButton("R2（デジタル）"))
+        if (Input.GetButton("CSMove(R_Toggle)"))
         {
             this.transform.localRotation = Quaternion.Euler(
             init_rot_x,
             0f,
-            Z_Range * ((Input.GetAxis("R2（アナログ）") + 1f) / 2f)
+            Z_Range * ((Input.GetAxis("CSMove(R_Rot)") + 1f) / 2f)
             );
         }
         else
