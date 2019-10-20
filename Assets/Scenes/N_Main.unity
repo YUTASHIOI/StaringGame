@@ -632,7 +632,7 @@ PrefabInstance:
         type: 3}
       propertyPath: pFace
       value: 
-      objectReference: {fileID: 7537343949131882536, guid: 99e6fc74ac6a1cc4bb3ac7774b0767c4,
+      objectReference: {fileID: 1316835606639983421, guid: eb67dce7a89d6de448fe2f42c0da6da8,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 518379a022cd2f5438aaaadbc3883c91, type: 3}
