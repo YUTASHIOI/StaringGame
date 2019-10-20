@@ -24,7 +24,6 @@ public class SeedController2 : MonoBehaviour
     void Start()
     {
         sun = GameObject.Find("SUN");
-        Debug.Log("sun find");
         Center_Pos = sun.GetComponent<Transform>().position;
         //惑星に初速を与える
         Vector3 initVelocity = new Vector3(0f, -initVelocityY, 0f); ;

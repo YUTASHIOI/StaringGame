@@ -17,7 +17,6 @@ public class FaceDirectorScript : MonoBehaviour
             FaceOriginPosition += new Vector3(10.0f,0.0f,0.0f);
         }
         Instantiate(pFace,FaceOriginPosition, Quaternion.identity);
-        Debug.Log("adasfasfad");
     }
 
     // Update is called once per frame
