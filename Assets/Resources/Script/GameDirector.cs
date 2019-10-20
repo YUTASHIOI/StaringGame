@@ -24,6 +24,10 @@ public class GameDirector : MonoBehaviour
     [SerializeField, TooltipAttribute("プレイヤーPrefab")]
     private GameObject player;
 
+    [SerializeField, TooltipAttribute("プレイヤーPrefab")]
+    private List<IController> controllers = new List<IController>();
+    public List<IController> Controllers { get { return controllers; } }
+
     private bool device_flag;       //デバイスの認識が完了したかどうか
 
     /*------------------------------------------------------------------*
@@ -83,8 +87,10 @@ public class GameDirector : MonoBehaviour
 
         //接続されているデバイスを取得
         StartCoroutine("CreatePlayer");
-               
+
+        controllers.Clear();
     }
+
     /*******************************************************
      * **********
     // Start is called before the first frame update
@@ -92,6 +98,7 @@ public class GameDirector : MonoBehaviour
     void Start()
     {
     }
+
     /*****************************************************************
     // Update is called once per frame
      *****************************************************************/
@@ -107,14 +114,30 @@ public class GameDirector : MonoBehaviour
                     Game_Scene_T = GAME_STATE_TYPE.PRE_GAME;
                 }
                 break;
+
             case GameDirector.GAME_STATE_TYPE.PRE_GAME:
                 //ゲーム開始直前の1Fだけ
+                foreach(var controller in controllers)
+                {
+                    controller.ControllerInitialize();
+                }
                 Game_Scene_T = GAME_STATE_TYPE.GAME;
                 break;
+
             case GameDirector.GAME_STATE_TYPE.GAME:
+                foreach(var controller in controllers)
+                {
+                    controller.ControllerUpdate();
+                }
                 break;
+
             case GameDirector.GAME_STATE_TYPE.POST_GAME:
+                foreach(var controller in controllers)
+                {
+                    controller.ControllerFinalize();
+                }
                 break;
+
             default:
                 break;
         }

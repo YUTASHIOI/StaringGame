@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChopsticsController : MonoBehaviour
+public class ChopsticsController : MonoBehaviour, IController
 {
     [SerializeField, TooltipAttribute("ゲームステータスの取得")]
     GameDirector GameDirector;
@@ -96,32 +96,24 @@ public class ChopsticsController : MonoBehaviour
     {
         InitPinchPollen();
     }
-    /*******************************************************************
-    // Start is called before the first frame update
-     *******************************************************************/
+
     void Start()
     {
+        GameDirector.Controllers.Add(this);
     }
 
-    /*******************************************************************
-    // Update is called once per frame
-     *******************************************************************/
-    void Update()
+    public void ControllerInitialize()
     {
-        switch(GameDirector.Game_Scene_T)
-        {
-            case GameDirector.GAME_STATE_TYPE.PREPARATE:
-                break;
-            case GameDirector.GAME_STATE_TYPE.PRE_GAME:
-                InitPinchPollen();
-                break;
-            case GameDirector.GAME_STATE_TYPE.GAME:
-                UpdatePinchPollen();
-                break;
-            case GameDirector.GAME_STATE_TYPE.POST_GAME:
-                break;
-            default:
-                break;
-        }
+        InitPinchPollen();
+    }
+
+    public void ControllerUpdate()
+    {
+        UpdatePinchPollen();
+    }
+
+    public void ControllerFinalize()
+    {
+
     }
 }
