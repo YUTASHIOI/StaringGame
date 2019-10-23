@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SeedDirector : MonoBehaviour
+public class SeedDirector : MonoBehaviour, IController
 {
     GameDirector GameDirector;
 
@@ -16,21 +16,29 @@ public class SeedDirector : MonoBehaviour
     void Start()
     {
         GameDirector = GameObject.Find("GameDirector").GetComponent<GameDirector>();
+        GameDirector.Controllers.Add(this);
     }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// 初期化
+    /// </summary>
+    public void ControllerInitialize()
     {
-        switch (GameDirector.Game_Scene_T)
-        {
-            case GameDirector.GAME_STATE_TYPE.PREPARATE:
-                break;
-            case GameDirector.GAME_STATE_TYPE.PRE_GAME:
-                InstanceSeed();
-                break;
-            default:
-                break;
-        }
+        InstanceSeed();
+    }
+
+    /// <summary>
+    /// 更新
+    /// </summary>
+    public void ControllerUpdate()
+    {
+    }
+
+    /// <summary>
+    /// 終了処理
+    /// </summary>
+    public void ControllerFinalize()
+    {
     }
 
     //豆出す

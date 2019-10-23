@@ -6,16 +6,18 @@ public class GameDirector : MonoBehaviour
 {
 
     //-------------------------------------------------ゲームの状態遷移
-    public enum GAME_STATE_TYPE
+    private enum GAME_STATE_TYPE
     {
         PREPARATE,  //ゲーム前
         PRE_GAME,   //ゲーム開始最初の1F
         GAME,       //ゲーム終了
         POST_GAME,  //ゲーム終了後最初の1F
     }
+
     //---------------------------------------------インスペクタービュー
     [SerializeField, TooltipAttribute("ゲームの進行状況を管理する")]
-    public GAME_STATE_TYPE Game_Scene_T;
+    private GAME_STATE_TYPE Game_Scene_T;
+
     [SerializeField, TooltipAttribute("デバイス接続数")]
     public int device_num;
     [SerializeField, TooltipAttribute("16:9の場合")]

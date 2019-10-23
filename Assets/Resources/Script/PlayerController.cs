@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IController
 {
     public GameDirector GameDirector;
     public string playerID;
@@ -14,32 +14,34 @@ public class PlayerController : MonoBehaviour
     {
         
     }
+
     /*******************************************************************
     // Start is called before the first frame update
      *******************************************************************/
     void Start()
     {
-
+        GameDirector.Controllers.Add(this);
     }
 
-    /*******************************************************************
-    // Update is called once per frame
-     *******************************************************************/
-    void Update()
+    /// <summary>
+    /// 初期化
+    /// </summary>
+    public void ControllerInitialize()
     {
-        switch (GameDirector.Game_Scene_T)
-        {
-            case GameDirector.GAME_STATE_TYPE.PREPARATE:
-                break;
-            case GameDirector.GAME_STATE_TYPE.PRE_GAME:
-                GameObject.Find("Chopsticks").GetComponent<ChopsticsController>().playerID = playerID;
-                break;
-            case GameDirector.GAME_STATE_TYPE.GAME:
-                break;
-            case GameDirector.GAME_STATE_TYPE.POST_GAME:
-                break;
-            default:
-                break;
-        }
+        GameObject.Find("Chopsticks").GetComponent<ChopsticsController>().playerID = playerID;
+    }
+
+    /// <summary>
+    /// 更新
+    /// </summary>
+    public void ControllerUpdate()
+    {
+    }
+
+    /// <summary>
+    /// 終了処理
+    /// </summary>
+    public void ControllerFinalize()
+    {
     }
 }
