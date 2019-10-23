@@ -32,25 +32,105 @@ public class FaceShapeScript : MonoBehaviour
         JoypadInputSwitch();
         ShapeChange();
     }
-
+    //同時押し→片方離しで急に顔が変わるのを修正したい
     void ShapeChange()
     {
-        faceMotion.SetBlendShapeWeight( 0, (float)button_L2);          //右目閉じる
-        faceMotion.SetBlendShapeWeight( 1, (float)button_R2);          //左目閉じる
-        faceMotion.SetBlendShapeWeight( 2, (float)button_L1);          //右眉上げる
-        faceMotion.SetBlendShapeWeight( 3, (float)button_R1);          //左眉上げる
-        faceMotion.SetBlendShapeWeight( 4, (float)button_Cursor_Down);          //右口角上げる
-        faceMotion.SetBlendShapeWeight( 5, (float)button_Cross);          //左口角上げる
-        faceMotion.SetBlendShapeWeight( 6, (float)button_Cursor_Left);          //右口角下げる
-        faceMotion.SetBlendShapeWeight( 7, (float)button_Cirle);          //左口角下げる
-        faceMotion.SetBlendShapeWeight( 8, (float)button_Cursor_Right);          //右眉困り顔
-        faceMotion.SetBlendShapeWeight( 9, (float)button_Square);          //左眉困り顔
-        faceMotion.SetBlendShapeWeight(10, (float)button_Cursor_Up);          //右眉怒り顔
-        faceMotion.SetBlendShapeWeight(11, (float)button_Triangle);          //左眉怒り顔
-        faceMotion.SetBlendShapeWeight(12, (float)button_Share);          //右目大開き
-        faceMotion.SetBlendShapeWeight(13, (float)button_Option);          //左目大開き
-        faceMotion.SetBlendShapeWeight(14, (float)button_PS);          //鼻開く
-        faceMotion.SetBlendShapeWeight(15, (float)button_TrackPad);          //口尖らす
+        if (button_L1 == 0) {
+            faceMotion.SetBlendShapeWeight(12, 0);
+            faceMotion.SetBlendShapeWeight(0, (float)button_L2);               //右目閉じる
+        }
+        if (button_L2 == 0)
+        {
+            faceMotion.SetBlendShapeWeight(0, 0);
+            faceMotion.SetBlendShapeWeight(12, (float)button_L1);               //右目大開き
+        }
+
+        if (button_R1 == 0)
+        {
+            faceMotion.SetBlendShapeWeight(13, 0);
+            faceMotion.SetBlendShapeWeight(1, (float)button_R2);               //左目閉じる
+        }
+        if (button_R2 == 0)
+        {
+            faceMotion.SetBlendShapeWeight(1, 0);
+            faceMotion.SetBlendShapeWeight(13, (float)button_R1);               //左目大開き
+        }
+
+        if (button_Cursor_Right == 0 && button_Cursor_Up == 0)
+        {
+            faceMotion.SetBlendShapeWeight(8, 0);
+            faceMotion.SetBlendShapeWeight(10, 0);
+            faceMotion.SetBlendShapeWeight(2, (float)button_Share);            //右眉上げる
+        }
+        if (button_Share == 0 && button_Cursor_Up == 0)
+        {
+            faceMotion.SetBlendShapeWeight(2, 0);
+            faceMotion.SetBlendShapeWeight(10, 0);
+            faceMotion.SetBlendShapeWeight(8, (float)button_Cursor_Right);     //右眉困り顔
+        }
+        if (button_Share == 0 && button_Cursor_Right == 0)
+        {
+            faceMotion.SetBlendShapeWeight(2, 0);
+            faceMotion.SetBlendShapeWeight(8, 0);
+            faceMotion.SetBlendShapeWeight(10, (float)button_Cursor_Up);        //右眉怒り顔
+        }
+
+        if (button_Square == 0 && button_Triangle == 0)
+        {
+            faceMotion.SetBlendShapeWeight(9, 0);
+            faceMotion.SetBlendShapeWeight(11, 0);
+            faceMotion.SetBlendShapeWeight(3, (float)button_Option);           //左眉上げる
+        }
+        if (button_Option == 0 && button_Triangle == 0)
+        {
+            faceMotion.SetBlendShapeWeight(3, 0);
+            faceMotion.SetBlendShapeWeight(11, 0);
+            faceMotion.SetBlendShapeWeight(9, (float)button_Square);           //左眉困り顔
+        }
+        if (button_Option == 0 && button_Square == 0)
+        {
+            faceMotion.SetBlendShapeWeight(3, 0);
+            faceMotion.SetBlendShapeWeight(9, 0);
+            faceMotion.SetBlendShapeWeight(11, (float)button_Triangle);         //左眉怒り顔
+        }
+
+        if (button_Cursor_Left == 0 && button_PS == 0)
+        {
+            faceMotion.SetBlendShapeWeight(6, 0);
+            faceMotion.SetBlendShapeWeight(15, 0);
+            faceMotion.SetBlendShapeWeight(4, (float)button_Cursor_Down);      //右口角上げる
+        }
+        if (button_Cursor_Down == 0 && button_PS == 0)
+        {
+            faceMotion.SetBlendShapeWeight(4, 0);
+            faceMotion.SetBlendShapeWeight(15, 0);
+            faceMotion.SetBlendShapeWeight(6, (float)button_Cursor_Left);      //右口角下げる
+        }
+
+        if (button_Cirle == 0 && button_PS == 0)
+        {
+            faceMotion.SetBlendShapeWeight(7, 0);
+            faceMotion.SetBlendShapeWeight(15, 0);
+            faceMotion.SetBlendShapeWeight(5, (float)button_Cross);            //左口角上げる
+        }
+        if (button_Cross == 0 && button_PS == 0)
+        {
+            faceMotion.SetBlendShapeWeight(5, 0);
+            faceMotion.SetBlendShapeWeight(15, 0);
+            faceMotion.SetBlendShapeWeight(7, (float)button_Cirle);            //左口角下げる
+        }
+
+        if (button_Cursor_Down == 0 && button_Cursor_Left == 0 && button_Cross == 0 && button_Cirle == 0)
+        {
+            faceMotion.SetBlendShapeWeight(4, 0);
+            faceMotion.SetBlendShapeWeight(5, 0);
+            faceMotion.SetBlendShapeWeight(6, 0);
+            faceMotion.SetBlendShapeWeight(7, 0);
+            faceMotion.SetBlendShapeWeight(15, (float)button_PS);               //口尖らす
+        }
+
+        faceMotion.SetBlendShapeWeight(14, (float)button_TrackPad);         //鼻開く
+
         //faceMotion.SetBlendShapeWeight(16, (float)key_J);
         //faceMotion.SetBlendShapeWeight(17, key_K);
         //faceMotion.SetBlendShapeWeight(18, key_L);
