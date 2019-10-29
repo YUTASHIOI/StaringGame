@@ -26,12 +26,16 @@ public class SeedDirector : MonoBehaviour, IController
     {
         InstanceSeed();
     }
-
+    
     /// <summary>
     /// 更新
     /// </summary>
     public void ControllerUpdate()
     {
+        if (Input.GetKey(KeyCode.A))
+        {
+            InstanceSeed();
+        }
     }
 
     /// <summary>

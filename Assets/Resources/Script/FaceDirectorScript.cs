@@ -7,7 +7,7 @@ public class FaceDirectorScript : MonoBehaviour
 {
     [SerializeField]
     GameObject pFace;
-    Vector3 FaceOriginPosition = new Vector3(0.0f, 0.0f, 0.0f);
+    Vector3 FaceOriginPosition = new Vector3(0.0f, 0.0f, -2.5f);
 
     // Start is called before the first frame update
     void Start()

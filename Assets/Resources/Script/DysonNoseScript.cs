@@ -9,7 +9,7 @@ public class DysonNoseScript : MonoBehaviour
     GameObject Nose_Hole;
 
     [SerializeField]
-    float power;
+    float power = 10;
 
     // Start is called before the first frame update
     void Start()

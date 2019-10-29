@@ -20,6 +20,7 @@ public class SeedController2 : MonoBehaviour
     Vector3 Center_Pos;
     Vector3 side1;
     Vector3 side2;
+    int gravityTimer = 0;
 
     void Start()
     {
@@ -36,13 +37,18 @@ public class SeedController2 : MonoBehaviour
     void FixedUpdate()
     {
         //最初の力
-        if (GetComponent<Transform>().position.y < -2.7f && gravitySwitch == false)
+        //if (GetComponent<Transform>().position.y < -2.7f && gravitySwitch == false)
+        if (gravityTimer > 20 && gravitySwitch == false)
         {
             gravitySwitch = true;
             side1 = Center_Pos - this.transform.position;
             side2 = new Vector3(this.transform.position.x, this.transform.position.y, 0.0f) - this.transform.position;
             Vector3 initVelocity = Vector3.Cross(side1, side2).normalized * initVelocityY;
             GetComponent<Rigidbody>().velocity = initVelocity;
+        }
+        else
+        {
+            gravityTimer++;
         }
 
         //重力ON
@@ -64,6 +70,11 @@ public class SeedController2 : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        gravitySwitch = false;
+    }
+
     //一定のルートで周回
     void KeepDistance(float dis, Vector3 direction)
     {
@@ -71,13 +82,11 @@ public class SeedController2 : MonoBehaviour
         {
             GetComponent<Rigidbody>().AddForce(-f * (4.0f/dis) * direction, ForceMode.Force);
             //G = (UNIVERSAL_GRAVITATION / 1000) * dis * 200;
-            Debug.Log("near");
         }
         else if(dis > 13.0f)
         {
             GetComponent<Rigidbody>().AddForce((dis/13) * f * direction, ForceMode.Force);
             //G = UNIVERSAL_GRAVITATION * dis/10;
-            Debug.Log("far");
         }
         else
         {
