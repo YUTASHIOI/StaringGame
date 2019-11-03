@@ -10,7 +10,7 @@ public class ImitationFaceDirector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(pFace,new Vector3(-15.0f,0.0f,0.0f), new Quaternion(0.0f, -12.0f, 0.0f,0.0f));
+        Instantiate(pFace,new Vector3(-15.0f,0.0f,0.0f), Quaternion.AngleAxis(-29.0f,Vector3.up));
     }
 
     // Update is called once per frame
