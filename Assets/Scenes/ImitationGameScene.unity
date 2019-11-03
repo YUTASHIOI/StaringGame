@@ -230,6 +230,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3992118025370806596, guid: 518379a022cd2f5438aaaadbc3883c91,
+        type: 3}
+      propertyPath: pFace
+      value: 
+      objectReference: {fileID: 7425174589753611455, guid: 9db0aae3439586941b66bc951c793a06,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 518379a022cd2f5438aaaadbc3883c91, type: 3}
 --- !u!1 &937478930
@@ -413,17 +419,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -4994593789193338027, guid: 4ea1948673f4a3d47a67692728637be8,
-        type: 3}
-      propertyPath: pFace
-      value: 
-      objectReference: {fileID: 455920777398015210, guid: e867bf626ef62084cb8edb97815ee925,
-        type: 3}
     - target: {fileID: 2606936190671859174, guid: 4ea1948673f4a3d47a67692728637be8,
         type: 3}
       propertyPath: m_Name
       value: ImitationFaceDirector
       objectReference: {fileID: 0}
+    - target: {fileID: -4994593789193338027, guid: 4ea1948673f4a3d47a67692728637be8,
+        type: 3}
+      propertyPath: pFace
+      value: 
+      objectReference: {fileID: 7425174589753611455, guid: 9db0aae3439586941b66bc951c793a06,
+        type: 3}
     - target: {fileID: 2606936190671859173, guid: 4ea1948673f4a3d47a67692728637be8,
         type: 3}
       propertyPath: m_LocalPosition.x

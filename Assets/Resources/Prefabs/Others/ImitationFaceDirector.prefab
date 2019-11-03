@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dd2a4bffa937b44abc299fc158cc8e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pFace: {fileID: 455920777398015210, guid: e867bf626ef62084cb8edb97815ee925, type: 3}
+  pFace: {fileID: 7425174589753611455, guid: 9db0aae3439586941b66bc951c793a06, type: 3}
 --- !u!114 &-4994593789193338027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,3 +57,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d733786421edb94f8690aab48388e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pFace: {fileID: 7425174589753611455, guid: 9db0aae3439586941b66bc951c793a06, type: 3}
