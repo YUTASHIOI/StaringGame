@@ -424,7 +424,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Nose_Hole: {fileID: 7062669755781649984}
-  power: 0
+  power: 10
+  dyson_power: 0
 --- !u!1 &5919654148505011603
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,7 +777,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Nose_Hole: {fileID: 246675939237047811}
-  power: 0
+  power: 10
+  dyson_power: 0
 --- !u!1 &7969517474164410282
 GameObject:
   m_ObjectHideFlags: 0

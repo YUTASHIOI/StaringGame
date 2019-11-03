@@ -72,7 +72,7 @@ public class ChopsticsController : MonoBehaviour, IController
             //Z軸
             tmp_pos.z = CameraController.z;
 
-
+            
             //コントローラーの値を代入する
             this.transform.localPosition = tmp_pos;
         }

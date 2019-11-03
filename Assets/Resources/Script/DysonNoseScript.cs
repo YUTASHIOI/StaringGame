@@ -11,6 +11,9 @@ public class DysonNoseScript : MonoBehaviour
     [SerializeField]
     float power = 10;
 
+    [SerializeField]
+    public float dyson_power;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +23,7 @@ public class DysonNoseScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        dyson_power = power * Mathf.Sin(Time.time);
     }
 
     // 豆が当たったら、鼻息に動かされる（吸い込み・吐き出し）
@@ -28,7 +31,6 @@ public class DysonNoseScript : MonoBehaviour
     {
         if(other.tag == "seed")
         {
-            float dyson_power = power * Mathf.Sin(Time.time);
             Rigidbody rigidbody = other.GetComponent<Rigidbody>();
             Vector3 nlz_vector = (other.transform.position - Nose_Hole.transform.position).normalized;
             rigidbody.AddForce(nlz_vector * dyson_power);
