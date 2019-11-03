@@ -43,4 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d733786421edb94f8690aab48388e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pFace: {fileID: 7969517474164410282, guid: 532095197a6e3a2478ea4ee5c8c66da2, type: 3}
+  ImitationFace: {fileID: 7969517474164410282, guid: 532095197a6e3a2478ea4ee5c8c66da2,
+    type: 3}
+  ImitationAutoFace: {fileID: 7969517474164410282, guid: da1a96406a569af45b3dd56da5e440c3,
+    type: 3}
