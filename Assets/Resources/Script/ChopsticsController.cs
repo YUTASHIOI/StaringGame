@@ -56,6 +56,7 @@ public class ChopsticsController : MonoBehaviour, IController
          * 
          */
         //Lスティックの移動量がnoize以上だったら,箸を移動させる
+
         if (Mathf.Abs(Input.GetAxis("CSMove(Horizontal)")) + Mathf.Abs(Input.GetAxis("CSMove(Vertical)")) > noize)
         {
             // 倒した角度によって移動を加速させたい
@@ -71,7 +72,6 @@ public class ChopsticsController : MonoBehaviour, IController
 
             //Z軸
             tmp_pos.z = CameraController.z;
-
 
             //コントローラーの値を代入する
             this.transform.localPosition = tmp_pos;

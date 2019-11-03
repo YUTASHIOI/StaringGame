@@ -917,6 +917,7 @@ MonoBehaviour:
   Eye_R: {fileID: 2940134438420549079}
   Eye_L: {fileID: 9156072785885314087}
   Seed_Pos_def: 5
+  m_num: 0
 --- !u!1 &9156072785885314087
 GameObject:
   m_ObjectHideFlags: 0

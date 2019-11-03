@@ -18,7 +18,9 @@ public class FaceDirectorScript : MonoBehaviour
             FaceOriginPosition += new Vector3(10.0f,0.0f,0.0f);
             FaceOriginQuaternion = Quaternion.AngleAxis(14.0f, Vector3.up);
         }
-        Instantiate(pFace,FaceOriginPosition, Quaternion.identity);
+        GameObject Seed = Instantiate(pFace,FaceOriginPosition, Quaternion.identity) as GameObject;
+        //プレハブ名の変更
+        Seed.name = "Face_Root";
     }
 
     // Update is called once per frame
