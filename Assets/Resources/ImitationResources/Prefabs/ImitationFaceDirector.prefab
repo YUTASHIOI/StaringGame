@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2606936190671859173}
-  - component: {fileID: 2606936190671859172}
   - component: {fileID: -4994593789193338027}
   m_Layer: 0
   m_Name: ImitationFaceDirector
@@ -32,19 +31,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2606936190671859172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2606936190671859174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dd2a4bffa937b44abc299fc158cc8e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pFace: {fileID: 7425174589753611455, guid: 9db0aae3439586941b66bc951c793a06, type: 3}
 --- !u!114 &-4994593789193338027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,4 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d733786421edb94f8690aab48388e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pFace: {fileID: 7425174589753611455, guid: 9db0aae3439586941b66bc951c793a06, type: 3}
+  ImitationFace: {fileID: 7969517474164410282, guid: 532095197a6e3a2478ea4ee5c8c66da2,
+    type: 3}
+  ImitationAutoFace: {fileID: 7969517474164410282, guid: da1a96406a569af45b3dd56da5e440c3,
+    type: 3}

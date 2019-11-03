@@ -12,11 +12,18 @@ public class SeedDirector : MonoBehaviour, IController
     [SerializeField]
     float Seed_Pos_def;
 
+    /// <summary>
+    /// 生み出された種の数
+    /// </summary>
+    [SerializeField]
+    int m_num;
+
     // Start is called before the first frame update
     void Start()
     {
         GameDirector = GameObject.Find("GameDirector").GetComponent<GameDirector>();
         GameDirector.Controllers.Add(this);
+        m_num = 0;
     }
 
     /// <summary>
@@ -45,18 +52,28 @@ public class SeedDirector : MonoBehaviour, IController
     {
     }
 
-    //豆出す
+    /// <summary>
+    /// タネダス
+    /// </summary>
     public void InstanceSeed()
     {
         Vector3 ER_Pos = Eye_R.transform.position;
         Vector3 EL_Pos = Eye_L.transform.position;
+
+        //種の数更新
+        m_num++;
+
         if (Random.Range(-1.0f, 1.0f) < 0.0f)
         {
-            Instantiate(pSeed, new Vector3(ER_Pos.x, ER_Pos.y, -11), Quaternion.identity);
+            GameObject Seed = Instantiate(pSeed, new Vector3(ER_Pos.x, ER_Pos.y, -11), Quaternion.identity) as GameObject;
+            //プレハブ名の変更
+            Seed.name = "Seed_" + (m_num).ToString();
         }
         else
         {
-            Instantiate(pSeed, new Vector3(EL_Pos.x, EL_Pos.y, -11), Quaternion.identity);
+            GameObject Seed = Instantiate(pSeed, new Vector3(EL_Pos.x, EL_Pos.y, -11), Quaternion.identity) as GameObject;
+            //プレハブ名の変更
+            Seed.name = "Seed_" + (m_num).ToString();
         }
     }
 }

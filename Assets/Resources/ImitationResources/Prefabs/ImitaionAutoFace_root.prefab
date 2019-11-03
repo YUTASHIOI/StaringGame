@@ -424,8 +424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Nose_Hole: {fileID: 7062669755781649984}
-  power: 10
-  dyson_power: 0
+  power: 0
 --- !u!1 &5919654148505011603
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,8 +776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Nose_Hole: {fileID: 246675939237047811}
-  power: 10
-  dyson_power: 0
+  power: 0
 --- !u!1 &7969517474164410282
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,9 +786,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8122361838042080978}
-  - component: {fileID: 1755302956613056971}
+  - component: {fileID: 5026873960468520983}
   m_Layer: 0
-  m_Name: Face_root
+  m_Name: ImitaionAutoFace_root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -814,7 +812,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1755302956613056971
+--- !u!114 &5026873960468520983
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -823,10 +821,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7969517474164410282}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e391cc4a8e4787b4791947523343a1ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ba2ef5819dd1d74f81114bb629425ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faceMotion: {fileID: 1594409842976925972}
+  faceMotion: {fileID: 8990341775721873305, guid: 9db0aae3439586941b66bc951c793a06,
+    type: 3}
   button_L2: 0
   button_R2: 0
   button_L1: 0
@@ -853,8 +852,8 @@ MonoBehaviour:
   key_B: 0
   key_N: 0
   key_M: 0
-  transSpeed: 4
-  Face: {fileID: 107790189763824912}
+  transSpeed: 0
+  Face: {fileID: 7425174589753611455, guid: 9db0aae3439586941b66bc951c793a06, type: 3}
 --- !u!1 &8525785592881476868
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,6 +864,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1801987983413446997}
   - component: {fileID: 8335472068838764298}
+  - component: {fileID: 7228389570922930426}
   m_Layer: 0
   m_Name: EYES_root
   m_TagString: Untagged
@@ -902,6 +902,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Eye_R: {fileID: 2940134438420549079}
   Eye_L: {fileID: 9156072785885314087}
+--- !u!114 &7228389570922930426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8525785592881476868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36935585c5c0abb40bd16fe7e27f5a97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pSeed: {fileID: 7205343072754361444, guid: 966c5909505fcf343838735e9f40a7db, type: 3}
+  Eye_R: {fileID: 2940134438420549079}
+  Eye_L: {fileID: 9156072785885314087}
+  Seed_Pos_def: 5
+  m_num: 0
 --- !u!1 &9156072785885314087
 GameObject:
   m_ObjectHideFlags: 0

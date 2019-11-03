@@ -424,8 +424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Nose_Hole: {fileID: 7062669755781649984}
-  power: 10
-  dyson_power: 0
+  power: 0
 --- !u!1 &5919654148505011603
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,8 +776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Nose_Hole: {fileID: 246675939237047811}
-  power: 10
-  dyson_power: 0
+  power: 0
 --- !u!1 &7969517474164410282
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,6 +863,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1801987983413446997}
   - component: {fileID: 8335472068838764298}
+  - component: {fileID: 7228389570922930426}
   m_Layer: 0
   m_Name: EYES_root
   m_TagString: Untagged
@@ -902,6 +901,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Eye_R: {fileID: 2940134438420549079}
   Eye_L: {fileID: 9156072785885314087}
+--- !u!114 &7228389570922930426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8525785592881476868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36935585c5c0abb40bd16fe7e27f5a97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pSeed: {fileID: 7205343072754361444, guid: 966c5909505fcf343838735e9f40a7db, type: 3}
+  Eye_R: {fileID: 2940134438420549079}
+  Eye_L: {fileID: 9156072785885314087}
+  Seed_Pos_def: 5
 --- !u!1 &9156072785885314087
 GameObject:
   m_ObjectHideFlags: 0
