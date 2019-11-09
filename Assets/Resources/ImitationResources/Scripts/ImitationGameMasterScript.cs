@@ -21,7 +21,7 @@ public class ImitationGameMasterScript : MonoBehaviour
         //Debug.Log(timeElapsed);
         if(timeElapsed >= timeOut)
         {
-            Debug.LogFormat("{0}秒経過", timeOut);
+            //Debug.LogFormat("{0}秒経過", timeOut);
             timeElapsed = 0.0f;
         }
     }
