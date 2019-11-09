@@ -854,7 +854,7 @@ MonoBehaviour:
   key_N: 0
   key_M: 0
   transSpeed: 0
-  Face: {fileID: 7425174589753611455, guid: 9db0aae3439586941b66bc951c793a06, type: 3}
+  Face: {fileID: 107790189763824912}
 --- !u!1 &8525785592881476868
 GameObject:
   m_ObjectHideFlags: 0

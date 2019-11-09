@@ -19,9 +19,9 @@ public class ImitationAutoFaceScript : MonoBehaviour
     [SerializeField]
     private GameObject Face;
 
-    float timeOut = 3f;
+    float timeOut = 10f;
     float timeElapsed = 0f;
-    float random = 0f;
+    //float random = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,107 +31,114 @@ public class ImitationAutoFaceScript : MonoBehaviour
 
     void Update()
     {
-        ShapeChange();
-
+        
         timeElapsed += Time.deltaTime;
         //Debug.Log(timeElapsed);
         if (timeElapsed >= timeOut)
         {
-            random = Random.Range(1,100);
-            Debug.Log(random);
+            Debug.LogFormat("{0}秒経過", timeOut);
+            for (int i = 0; i < 16; i++)
+            {
+                faceMotion.SetBlendShapeWeight(i, 0);
+            }
+            ShapeChange();
             timeElapsed = 0.0f;
         }
+
+
     }
 
     void ShapeChange()
     {
-        if (button_L1 == 0)
+        if (Random.value < 0.5f)
         {
+            Debug.Log(Random.value);
             faceMotion.SetBlendShapeWeight(12, 0);
             faceMotion.SetBlendShapeWeight(0, 100);               //右目閉じる
         }
-        if (button_L2 == 0)
+        if (Random.value > 0.5f)
         {
+            Debug.Log(Random.value);
             faceMotion.SetBlendShapeWeight(0, 0);
             faceMotion.SetBlendShapeWeight(12,0);               //右目大開き
         }
 
-        if (button_R1 == 0)
+        if (Random.value < 0.5f)
         {
             faceMotion.SetBlendShapeWeight(13, 0);
             faceMotion.SetBlendShapeWeight(1, 100);               //左目閉じる
         }
-        if (button_R2 == 0)
+        if (Random.value > 0.5f)
         {
             faceMotion.SetBlendShapeWeight(1, 0);
             faceMotion.SetBlendShapeWeight(13, 100);               //左目大開き
         }
 
-        if (button_Cursor_Right == 0 && button_Cursor_Up == 0)
+        if (Random.value < 0.5f)
         {
             faceMotion.SetBlendShapeWeight(8, 0);
             faceMotion.SetBlendShapeWeight(10, 0);
             faceMotion.SetBlendShapeWeight(2, 100);            //右眉上げる
         }
-        if (button_Share == 0 && button_Cursor_Up == 0)
+        if (Random.value < 0.5f)
         {
             faceMotion.SetBlendShapeWeight(2, 0);
             faceMotion.SetBlendShapeWeight(10, 0);
             faceMotion.SetBlendShapeWeight(8, 100);     //右眉困り顔
         }
-        if (button_Share == 0 && button_Cursor_Right == 0)
+        if (Random.value < 0.5f)
         {
             faceMotion.SetBlendShapeWeight(2, 0);
             faceMotion.SetBlendShapeWeight(8, 0);
             faceMotion.SetBlendShapeWeight(10, 100);        //右眉怒り顔
         }
 
-        if (button_Square == 0 && button_Triangle == 0)
+        if (Random.value < 0.5f)
         {
             faceMotion.SetBlendShapeWeight(9, 0);
             faceMotion.SetBlendShapeWeight(11, 0);
             faceMotion.SetBlendShapeWeight(3, 100);           //左眉上げる
         }
-        if (button_Option == 0 && button_Triangle == 0)
+        if (Random.value < 0.5f)
         {
             faceMotion.SetBlendShapeWeight(3, 0);
             faceMotion.SetBlendShapeWeight(11, 0);
             faceMotion.SetBlendShapeWeight(9, 100);           //左眉困り顔
         }
-        if (button_Option == 0 && button_Square == 0)
+        if (Random.value < 0.5f)
         {
             faceMotion.SetBlendShapeWeight(3, 0);
             faceMotion.SetBlendShapeWeight(9, 0);
             faceMotion.SetBlendShapeWeight(11, 100);         //左眉怒り顔
         }
 
-        if (button_Cursor_Left == 0 && button_PS == 0)
+        if (Random.value < 0.5f)
         {
             faceMotion.SetBlendShapeWeight(6, 0);
             faceMotion.SetBlendShapeWeight(15, 0);
             faceMotion.SetBlendShapeWeight(4, 100);      //右口角上げる
         }
-        if (button_Cursor_Down == 0 && button_PS == 0)
+        if (Random.value < 0.5f)
         {
             faceMotion.SetBlendShapeWeight(4, 0);
             faceMotion.SetBlendShapeWeight(15, 0);
             faceMotion.SetBlendShapeWeight(6, 100);      //右口角下げる
         }
 
-        if (button_Cirle == 0 && button_PS == 0)
+        if (Random.value < 0.5f)
         {
             faceMotion.SetBlendShapeWeight(7, 0);
             faceMotion.SetBlendShapeWeight(15, 0);
             faceMotion.SetBlendShapeWeight(5, 100);            //左口角上げる
         }
-        if (button_Cross == 0 && button_PS == 0)
+        if (Random.value < 0.5f)
         {
             faceMotion.SetBlendShapeWeight(5, 0);
             faceMotion.SetBlendShapeWeight(15, 0);
             faceMotion.SetBlendShapeWeight(7, 100);            //左口角下げる
         }
 
-        if (button_Cursor_Down == 0 && button_Cursor_Left == 0 && button_Cross == 0 && button_Cirle == 0)
+        if (Random.value < 0.5f)
         {
             faceMotion.SetBlendShapeWeight(4, 0);
             faceMotion.SetBlendShapeWeight(5, 0);
@@ -139,8 +146,11 @@ public class ImitationAutoFaceScript : MonoBehaviour
             faceMotion.SetBlendShapeWeight(7, 0);
             faceMotion.SetBlendShapeWeight(15, 100);               //口尖らす
         }
-        
-        faceMotion.SetBlendShapeWeight(14, (float)button_TrackPad);         //鼻開く
+
+        if (Random.value < 0.5f)
+        {
+            faceMotion.SetBlendShapeWeight(14, (float)button_TrackPad);         //鼻開く
+        }
 
         //faceMotion.SetBlendShapeWeight(16, (float)key_J);
         //faceMotion.SetBlendShapeWeight(17, key_K);
