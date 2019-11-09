@@ -11,9 +11,9 @@ public class FaceDirectorScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject Seed = Instantiate(pFace) as GameObject;
+        pFace = Instantiate(pFace, new Vector3(0, 0, -2.5f), Quaternion.identity) as GameObject; ;
         //プレハブ名の変更
-        Seed.name = "Face_Root";
+        pFace.name = "Face_Root";
     }
 
     // Update is called once per frame

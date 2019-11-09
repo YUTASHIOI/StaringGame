@@ -24,7 +24,6 @@ public class DysonNoseScript : MonoBehaviour
     void Update()
     {
         dyson_power = power * Mathf.Sin(Time.time);
-        Debug.Log("dyson:" + dyson_power);
     }
 
     // 豆が当たったら、鼻息に動かされる（吸い込み・吐き出し）

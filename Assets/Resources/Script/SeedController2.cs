@@ -73,6 +73,7 @@ public class SeedController2 : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         gravitySwitch = false;
+        gravityTimer = -1000;
     }
 
     //一定のルートで周回
