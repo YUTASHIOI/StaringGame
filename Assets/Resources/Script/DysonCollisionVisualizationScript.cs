@@ -5,7 +5,6 @@ using UnityEngine;
 public class DysonCollisionVisualizationScript : MonoBehaviour
 {
     DysonNoseScript DysonNoseScript;
-    float pow;
 
     // Start is called before the first frame update
     void Start()
@@ -21,8 +20,9 @@ public class DysonCollisionVisualizationScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pow = DysonNoseScript.dyson_power;
-        byte p = (byte)(pow * 255.0f);
+        float pow = DysonNoseScript.power;
+        float pow_dyson = DysonNoseScript.dyson_power + pow;
+        byte p = (byte)(pow_dyson/(pow*2) * 255.0f);
         GetComponent<Renderer>().material.color = new Color32(255, p, 255, 64);
     }
 }
