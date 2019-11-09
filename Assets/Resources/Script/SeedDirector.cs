@@ -39,7 +39,7 @@ public class SeedDirector : MonoBehaviour, IController
     /// </summary>
     public void ControllerUpdate()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetButtonDown("トラックパッド押し込み"))
         {
             InstanceSeed();
         }

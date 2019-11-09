@@ -425,6 +425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Nose_Hole: {fileID: 7062669755781649984}
   power: 0
+  dyson_power: 0
 --- !u!1 &5919654148505011603
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,6 +778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Nose_Hole: {fileID: 246675939237047811}
   power: 0
+  dyson_power: 0
 --- !u!1 &7969517474164410282
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,8 +826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ba2ef5819dd1d74f81114bb629425ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faceMotion: {fileID: 8990341775721873305, guid: 9db0aae3439586941b66bc951c793a06,
-    type: 3}
+  faceMotion: {fileID: 1594409842976925972}
   button_L2: 0
   button_R2: 0
   button_L1: 0
