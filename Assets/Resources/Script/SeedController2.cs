@@ -8,6 +8,10 @@ public class SeedController2 : MonoBehaviour
 
     private float UNIVERSAL_GRAVITATION = 6.67E-5f;
 
+
+    [SerializeField, TooltipAttribute("カメラの描画範囲")]
+    CameraController CameraController;
+
     public GameObject sun;
     public float initVelocityY;
     private float f;    //万有引力
@@ -22,9 +26,12 @@ public class SeedController2 : MonoBehaviour
     Vector3 side2;
     int gravityTimer = 0;
 
+    Vector3 tmp_pos;
+
     void Start()
     {
         sun = GameObject.Find("SUN");
+        CameraController = GameObject.Find("Main Camera").GetComponent<CameraController>();
         Center_Pos = sun.GetComponent<Transform>().position;
         //惑星に初速を与える
         Vector3 initVelocity = new Vector3(0f, -initVelocityY, 0f); ;
@@ -68,6 +75,21 @@ public class SeedController2 : MonoBehaviour
             //万有引力を与える
             GetComponent<Rigidbody>().AddForce(f * direction, ForceMode.Force);
         }
+
+
+        //画面外に行かないように
+        tmp_pos.x = this.transform.position.x;
+        tmp_pos.y = this.transform.position.y;
+        tmp_pos.z = this.transform.position.z;
+        //X軸
+        if (tmp_pos.x > CameraController.right) tmp_pos.x = CameraController.right;
+        else if (tmp_pos.x < CameraController.left) tmp_pos.x = CameraController.left;
+
+        //Y軸
+        if (tmp_pos.y > CameraController.top) tmp_pos.y = CameraController.top;
+        else if (tmp_pos.y < CameraController.bottom) tmp_pos.y = CameraController.bottom;
+
+        this.transform.position = tmp_pos;
     }
 
     private void OnCollisionEnter(Collision collision)
