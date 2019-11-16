@@ -52,13 +52,13 @@ public class ImitationAutoFaceScript : MonoBehaviour
     {
         if (Random.value < 0.5f)
         {
-            Debug.Log(Random.value);
+            //Debug.Log(Random.value);
             faceMotion.SetBlendShapeWeight(12, 0);
             faceMotion.SetBlendShapeWeight(0, 100);               //右目閉じる
         }
         if (Random.value > 0.5f)
         {
-            Debug.Log(Random.value);
+            //Debug.Log(Random.value);
             faceMotion.SetBlendShapeWeight(0, 0);
             faceMotion.SetBlendShapeWeight(12,0);               //右目大開き
         }
