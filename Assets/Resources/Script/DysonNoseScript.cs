@@ -29,7 +29,7 @@ public class DysonNoseScript : MonoBehaviour
     // 豆が当たったら、鼻息に動かされる（吸い込み・吐き出し）
     private void OnTriggerStay(Collider other)
     {
-        if(other.tag == "seed")
+        if(other.tag == "seed" && other.GetComponent<SeedController2>().gravitySwitch == false)
         {
             Rigidbody rigidbody = other.GetComponent<Rigidbody>();
             Vector3 nlz_vector = (other.transform.position - Nose_Hole.transform.position).normalized;

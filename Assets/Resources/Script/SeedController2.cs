@@ -19,7 +19,7 @@ public class SeedController2 : MonoBehaviour
     private float M;    //太陽の質量
     private float r;    //太陽と惑星の距離
     private float G = 6.67E-5f;    //万有引力定数(通常の1000000倍)
-    private bool gravitySwitch = false;
+    public bool gravitySwitch = false;
 
     Vector3 Center_Pos;
     Vector3 side1;

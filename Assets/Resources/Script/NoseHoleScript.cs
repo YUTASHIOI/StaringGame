@@ -20,7 +20,7 @@ public class NoseHoleScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         SeedDirector SeedDirector;
-        SeedDirector = GameObject.Find("EYES_root").GetComponent<SeedDirector>();
+        SeedDirector = GameObject.Find("GameDirector").GetComponent<SeedDirector>();
         if (other.tag == "seed")
         {
             Destroy(other.gameObject);
