@@ -537,7 +537,8 @@ PrefabInstance:
       propertyPath: chopsticks
       value: 
       objectReference: {fileID: 1196118670}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2384003878149829470, guid: 966c5909505fcf343838735e9f40a7db, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 966c5909505fcf343838735e9f40a7db, type: 3}
 --- !u!1001 &504955641
 PrefabInstance:
