@@ -4824,7 +4824,6 @@ GameObject:
   - component: {fileID: 7205343072754361447}
   - component: {fileID: 7205343072754361450}
   - component: {fileID: 7205343072754361451}
-  - component: {fileID: 2384003878149829470}
   - component: {fileID: 116118198}
   m_Layer: 0
   m_Name: seed
@@ -4919,6 +4918,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   se_explosion: {fileID: 8300000, guid: 69b490c6ab5410f4297f0b675b51a468, type: 3}
+  CameraController: {fileID: 0}
+  sun: {fileID: 0}
+  initVelocityY: 15
+  gravitySwitch: 0
 --- !u!54 &7205343072754361451
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4935,20 +4938,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 8
   m_CollisionDetection: 0
---- !u!114 &2384003878149829470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7205343072754361444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1d880a5b23c1004fbdfb87a6c7cc19d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sun: {fileID: 0}
-  initVelocityY: 15
 --- !u!82 &116118198
 AudioSource:
   m_ObjectHideFlags: 0
